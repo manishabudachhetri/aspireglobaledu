@@ -1,4 +1,4 @@
-import React from 'react';
+
 import logoImage from '../../assets/images/aspirelogo.jpeg';
 
 const FooterSection = () => {

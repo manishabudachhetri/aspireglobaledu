@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { BsArrowRight } from 'react-icons/bs';
 
 const Destination: React.FC = () => {

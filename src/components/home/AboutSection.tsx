@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { BsArrowRight } from 'react-icons/bs';
 
 const AboutSection = () => {

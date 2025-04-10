@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { FileText, GraduationCap, UserCheck } from 'lucide-react';
 
 interface StatItemProps {

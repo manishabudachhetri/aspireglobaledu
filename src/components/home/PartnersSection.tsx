@@ -1,4 +1,4 @@
-import React from "react";
+
 
 const partners: string[] = [
   // Add your partner university image URLs here

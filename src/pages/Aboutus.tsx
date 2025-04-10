@@ -1,9 +1,8 @@
 
-import React from "react";
 import { Link } from 'react-router-dom';
-import CTASection from '../components/home/CTASection';
-import WorkingProcess from '../components/home/WorkingProcess';
-import PartnersSection from '../components/home/PartnersSection';
+import CTASection from '../components/home/CTASection.tsx';
+import WorkingProcess from '../components/home/WorkingProcess.tsx';
+import PartnersSection from '../components/home/PartnersSection.tsx';
 
 const Aboutus = () => {
   return (
@@ -31,11 +30,11 @@ const Aboutus = () => {
 
       {/* Main Content Section */}
       <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="max-w-3xl"> {/* Added wrapper div for consistent width */}
+        <div className="max-w-3xl">
           <p className="text-sm text-[#FF8E3C] font-semibold mb-2">
             About Aspire Global Education
           </p>
-          <h2 className="text-3xl font-bold text-[#074293] mb-6 ">
+          <h2 className="text-3xl font-bold text-[#074293] mb-6">
             Grow your career with Aspire Global Education Consultancy
           </h2>
         </div>
@@ -45,7 +44,7 @@ const Aboutus = () => {
           {/* Text Content */}
           <div className="space-y-6 text-black text-justify">
             <p>
-              Aspire Global Education Consultancy Pvt. Ltd. is a trusted and professional educatio We assist students in pursuing higher education in Dubai, the UK, Malta, and other global destinations.
+              Aspire Global Education Consultancy Pvt. Ltd. is a trusted and professional education consultancy. We assist students in pursuing higher education in Dubai, the UK, Malta, and other global destinations.
             </p>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
@@ -155,6 +154,10 @@ const Aboutus = () => {
 };
 
 export default Aboutus;
+
+
+
+
 
 
 

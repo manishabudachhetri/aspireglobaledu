@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 export default function Insurance() {
@@ -134,6 +133,7 @@ export default function Insurance() {
     </div>
   );
 }
+
 
 
 
