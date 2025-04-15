@@ -23,7 +23,7 @@ const UK: React.FC = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-  const [submitStatus, setSubmitStatus] = useState<{
+  const [, setSubmitStatus] = useState<{
     success?: string;
     error?: string;
   }>({});

@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import FooterSection from "../../components/home/FooterSection";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+
 import { useState } from "react";
 
 const ScholaroppPage = () => {
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, ] = useState(0);
   const postsPerPage = 3;
 
   const recommendedPosts = [
@@ -31,7 +31,6 @@ const ScholaroppPage = () => {
     }
   ];
 
-  const totalPages = Math.ceil(recommendedPosts.length / postsPerPage);
   
   const getCurrentPosts = () => {
     const startIndex = currentPage * postsPerPage;

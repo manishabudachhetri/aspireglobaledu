@@ -31,20 +31,12 @@ const USA: React.FC = () => {
 
   // State for form submission
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-  const [submitStatus, setSubmitStatus] = useState<{
+  const [, setSubmitStatus] = useState<{
     success?: string;
     error?: string;
   }>({});
 
-  // Navigation links data
-  const countryLinks: CountryLink[] = [
-    { name: 'Study in USA', path: '/study-abroad/usa' },
-    { name: 'Study in Canada', path: '/study-abroad/canada' },
-    { name: 'Study in UK', path: '/study-abroad/uk' },
-    { name: 'Study in Europe', path: '/study-abroad/europe' },
-    { name: 'Study in Australia', path: '/study-abroad/australia' },
-    { name: 'Study in New Zealand', path: '/study-abroad/new-zealand' }
-  ];
+  
 
   // FAQ data
   const faqs: FAQ[] = [

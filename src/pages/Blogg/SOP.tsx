@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import FooterSection from "../../components/home/FooterSection";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+
 import { useState } from "react";
 
 interface BlogPost {
@@ -13,7 +13,7 @@ interface BlogPost {
 
 const SOPPage = () => {
   const navigate = useNavigate();
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage] = useState(0);
   const postsPerPage = 3;
 
   const recommendedPosts: BlogPost[] = [
@@ -61,20 +61,13 @@ const SOPPage = () => {
     }
   ];
 
-  const totalPages = Math.ceil(recommendedPosts.length / postsPerPage);
   
   const getCurrentPosts = () => {
     const startIndex = currentPage * postsPerPage;
     return recommendedPosts.slice(startIndex, startIndex + postsPerPage);
   };
 
-  const handleNextPage = () => {
-    setCurrentPage(prev => (prev + 1) % totalPages);
-  };
 
-  const handlePrevPage = () => {
-    setCurrentPage(prev => (prev - 1 + totalPages) % totalPages);
-  };
 
   return (
     <div className="flex flex-col w-full">
