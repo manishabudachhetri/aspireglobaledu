@@ -2,11 +2,6 @@ import React, { useState, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import FooterSection from '../../components/home/FooterSection';
 
-// Define types for our data structures
-interface CountryLink {
-  name: string;
-  path: string;
-}
 
 interface FAQ {
   q: string;
