@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import FooterSection from '../../components/home/FooterSection';
 
 export default function VisaAssistance() {
   const services = [
@@ -102,9 +103,11 @@ export default function VisaAssistance() {
           </div>
         </div>
       </div>
+      <FooterSection />
     </div>
   );
 }
+
 
 
 

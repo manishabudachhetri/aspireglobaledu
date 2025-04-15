@@ -44,6 +44,10 @@ const ServicesSection: React.FC = () => {
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h1 className="text-[#FF8E3C] text-2xl mb-2">Our Solution</h1>
+          <h2 className="text-[#074293] text-3xl font-bold">We Provide High Quality Educational Service</h2>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <Link 
@@ -76,6 +80,7 @@ const ServicesSection: React.FC = () => {
 };
 
 export default ServicesSection;
+
 
 
 

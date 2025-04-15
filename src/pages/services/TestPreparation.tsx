@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import FooterSection from '../../components/home/FooterSection';
 
-export default function TestPreparation() {
+const TestPreparation = () => {
   const services = [
     { name: "Career Counseling", path: "/services/career-counseling" },
     { name: "Visa Assistance", path: "/services/visa-assistance" },
@@ -111,8 +112,10 @@ export default function TestPreparation() {
           </div>
         </div>
       </div>
+      <FooterSection />
     </div>
   );
-}
+};
 
+export default TestPreparation;
 

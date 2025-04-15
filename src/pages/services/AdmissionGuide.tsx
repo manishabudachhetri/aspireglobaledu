@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import FooterSection from '../../components/home/FooterSection';
 
 export default function AdmissionGuide() {
   const services = [
@@ -97,9 +98,11 @@ export default function AdmissionGuide() {
           </div>
         </div>
       </div>
+      <FooterSection />
     </div>
   );
 }
+
 
 
 

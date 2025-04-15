@@ -1,41 +1,54 @@
-import  { useState } from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface TestClass {
   name: string;
   image: string;
+  path: string;
 }
 
 const OurClasses: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();
 
   const testPrepClasses: TestClass[] = [
     { 
       name: 'PTE Class',
-      image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop'
+      image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop',
+      path: '/preparation/pte'
     },
     { 
       name: 'TOEFL Class',
-      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop'
+      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop',
+      path: '/preparation/toefl'
     },
     { 
       name: 'IELTS Class',
-      image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop'
+      image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop',
+      path: '/preparation/ielts'
     },
     { 
       name: 'GRE Class',
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop'
+      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop',
+      path: '/preparation/gre'
     },
     { 
       name: 'SAT Class',
-      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop'
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop',
+      path: '/preparation/sat'
     },
     { 
       name: 'GMAT Class',
-      image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop'
+      image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop',
+      path: '/preparation/gmat'
     }
   ];
 
   const totalSlides = Math.ceil(testPrepClasses.length / 3);
+
+  const handleClassClick = (path: string) => {
+    navigate(path);
+  };
 
   return (
     <section className="bg-white w-full py-16" id="preparation">
@@ -60,7 +73,15 @@ const OurClasses: React.FC = () => {
                         .map((classItem, index) => (
                           <div 
                             key={index}
-                            className="bg-white shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group"
+                            onClick={() => handleClassClick(classItem.path)}
+                            className="bg-white shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer"
+                            role="button"
+                            tabIndex={0}
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter' || e.key === ' ') {
+                                handleClassClick(classItem.path);
+                              }
+                            }}
                           >
                             <div className="relative h-48 overflow-hidden">
                               <img 
@@ -104,6 +125,7 @@ const OurClasses: React.FC = () => {
 };
 
 export default OurClasses;
+
 
 
 

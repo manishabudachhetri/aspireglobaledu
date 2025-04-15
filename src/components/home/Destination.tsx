@@ -1,23 +1,28 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import { BsArrowRight } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 const Destination: React.FC = () => {
   const destinations = [
     {
       country: "USA",
-      image: "https://images.unsplash.com/photo-1556146385-97d8a0b5e66b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHVzYXxlbnwwfHwwfHx8MA%3D%3D"
+      image: "https://images.unsplash.com/photo-1556146385-97d8a0b5e66b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHVzYXxlbnwwfHwwfHx8MA%3D%3D",
+      path: "/abroad-study/usa"
     },
     {
       country: "France",
-      image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop",
+      path: "/abroad-study/france"
     },
     {
       country: "UK",
-      image: "https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?q=80&w=2070&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?q=80&w=2070&auto=format&fit=crop",
+      path: "/abroad-study/uk"
     },
     {
       country: "Canada",
-      image: "https://images.unsplash.com/photo-1517935706615-2717063c2225?q=80&w=2070&auto=format&fit=crop"
+      image: "https://images.unsplash.com/photo-1517935706615-2717063c2225?q=80&w=2070&auto=format&fit=crop",
+      path: "/abroad-study/canada"
     }
   ];
 
@@ -51,10 +56,13 @@ const Destination: React.FC = () => {
               </p>
             </div>
 
-            <button className="flex items-center space-x-2 bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded">
+            <Link 
+              to="/abroad-study" 
+              className="inline-flex items-center space-x-2 bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 transition duration-300"
+            >
               <span>View All</span>
               <BsArrowRight />
-            </button>
+            </Link>
           </div>
 
           {/* Right Column - Images */}
@@ -65,17 +73,24 @@ const Destination: React.FC = () => {
                   const index = (currentIndex + offset) % destinations.length;
                   const destination = destinations[index];
                   return (
-                    <div key={index} className="aspect-[2/3] w-full overflow-hidden relative group">
+                    <Link
+                      key={index}
+                      to={destination.path}
+                      className="aspect-[2/3] w-full overflow-hidden relative group cursor-pointer"
+                    >
                       <img 
                         src={destination.image}
                         alt={`Study in ${destination.country}`}
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/70"></div>
-                      <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/70 group-hover:from-transparent group-hover:to-black/80 transition-all duration-300"></div>
+                      <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform transition-transform duration-300 group-hover:translate-y-[-8px]">
                         <h3 className="text-xl font-semibold">Study in {destination.country}</h3>
+                        <span className="text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 block mt-2">
+                          Learn More →
+                        </span>
                       </div>
-                    </div>
+                    </Link>
                   );
                 })}
               </div>
@@ -85,6 +100,7 @@ const Destination: React.FC = () => {
                 <button 
                   onClick={handlePrev}
                   className="w-10 h-10 bg-[#074293] shadow-md flex items-center justify-center hover:bg-[#0a3b7c] transition-colors duration-300"
+                  aria-label="Previous destinations"
                 >
                   <svg 
                     width="24" 
@@ -103,6 +119,7 @@ const Destination: React.FC = () => {
                 <button 
                   onClick={handleNext}
                   className="w-10 h-10 bg-[#074293] shadow-md flex items-center justify-center hover:bg-[#0a3b7c] transition-colors duration-300"
+                  aria-label="Next destinations"
                 >
                   <svg 
                     width="24" 
@@ -128,3 +145,6 @@ const Destination: React.FC = () => {
 };
 
 export default Destination;
+
+
+

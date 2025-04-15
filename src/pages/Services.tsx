@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import FooterSection from '../components/home/FooterSection';
 
 const Services = () => {
   const services = [
@@ -51,7 +52,7 @@ const Services = () => {
       >
         <div className="absolute inset-0 bg-black bg-opacity-35 flex items-center justify-center">
           <div className="text-center text-white px-4">
-            <h1 className="text-3xl sm:text-4xl font-bold">Our Solutions</h1>
+            <h1 className="text-3xl sm:text-4xl font-bold">Our Services</h1>
             <p className="mt-2 text-sm sm:text-base">
               <Link to="/" className="hover:text-[#FF8E3C] transition-colors duration-300">Home</Link> / Services
             </p>
@@ -66,10 +67,8 @@ const Services = () => {
       {/* Services Section */}
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 py-8 sm:py-16">
         <div className="text-center mb-8 sm:mb-12">
-          <p className="text-[#FF8E3C] text-xl sm:text-2xl mb-2">Our Solution</p>
-          <h2 className="text-[#074293] text-2xl sm:text-3xl font-bold px-4">
-            We Provide High Quality Educational Service
-          </h2>
+          <h1 className="text-[#FF8E3C] text-2xl mb-2">Our Solution</h1>
+          <h2 className="text-[#074293] text-3xl font-bold">We Provide High Quality Educational Service</h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
@@ -115,11 +114,14 @@ const Services = () => {
           ))}
         </div>
       </div>
+      <FooterSection />
     </div>
   );
 };
 
 export default Services;
+
+
 
 
 

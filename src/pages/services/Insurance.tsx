@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import FooterSection from '../../components/home/FooterSection';
 
-export default function Insurance() {
+const Insurance = () => {
   const services = [
     { name: "Career Counseling", path: "/services/career-counseling" },
     { name: "Visa Assistance", path: "/services/visa-assistance" },
@@ -130,11 +131,10 @@ export default function Insurance() {
           </div>
         </div>
       </div>
+      <FooterSection />
     </div>
   );
-}
+};
 
-
-
-
+export default Insurance;
 

@@ -1,26 +1,29 @@
 
+import { Link } from 'react-router-dom';
 import logoImage from '../../assets/images/aspirelogo.jpeg';
 
 const FooterSection = () => {
   const quickLinks = [
-    { name: 'Home', url: '/home' },
+    { name: 'Home', url: '/' },
     { name: 'About Us', url: '/about' },
     { name: 'Services', url: '/services' },  
     { name: 'Contact', url: '/contact' },
-    { name: 'Preparation Class', url: '/preparation' },
-    { name: 'Visa Granted', url: '/success' },
+    { name: 'Preparation Class', url: '/preparation class' },
+    { name: 'Visa Granted', url: '/visagranted' },
     { name: 'Gallery', url: '/gallery' },
     { name: 'Blog', url: '/blog' },
   ];
 
   const services = [
-    { name: 'USA', url: '#usa' },
-    { name: 'Australia', url: '#australia' },
-    { name: 'Canada', url: '#canada' },
-    { name: 'UK', url: '#uk' },
-    { name: 'New-Zealand', url: '#new-zealand' },
-    { name: 'France', url: '#france' },
-    { name: 'Europe', url: '#europe' },
+    { name: 'USA', url: '/abroad-study/usa' },
+    { name: 'Australia', url: '/abroad-study/australia' },
+    { name: 'Canada', url: '/abroad-study/canada' },
+    { name: 'UK', url: '/abroad-study/uk' },
+    { name: 'New Zealand', url: '/abroad-study/new zealand' },
+    { name: 'France', url: '/abroad-study/france' },
+    { name: 'Germany', url: '/abroad-study/germany' },
+    { name: 'Spain', url: '/abroad-study/spain' },
+    { name: 'Europe', url: '/abroad-study/europe' }
   ];
 
   const contactInfo = [
@@ -46,20 +49,30 @@ const FooterSection = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.
             </p>
             
-            <button className="bg-[#0a3b7c] text-white px-8 py-3 border-2 border-[#0a3b7c] hover:bg-[#074293] hover:border-[#074293] transition-all font-semibold">
+            <Link 
+              to="/about"
+              className="bg-[#0a3b7c] text-white px-8 py-3 border-2 border-[#0a3b7c] hover:bg-[#074293] hover:border-[#074293] transition-all font-semibold inline-block"
+            >
               About Us →
-            </button>
+            </Link>
           </div>
 
           {/* Important Links */}
           <div>
-            <h3 className="text-xl font-bold mb-6 relative after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-1 after:w-32 after:bg-white">Important Links</h3>
+            <h3 className="text-xl font-bold mb-6 relative after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-1 after:w-32 after:bg-white">
+              Important Links
+            </h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a href={link.url} className="text-white/80 hover:text-white transition duration-300">
-                    {link.name}
-                  </a>
+                  <Link 
+                    to={link.url} 
+                    className="text-white/80 hover:text-white transition duration-300 flex items-center group"
+                  >
+                    <span className="transform group-hover:translate-x-2 transition-transform duration-300">
+                      {link.name}
+                    </span>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -67,13 +80,20 @@ const FooterSection = () => {
 
           {/* Study Abroad */}
           <div>
-            <h3 className="text-xl font-bold mb-6 relative after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-1 after:w-32 after:bg-white">Study Abroad</h3>
+            <h3 className="text-xl font-bold mb-6 relative after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-1 after:w-32 after:bg-white">
+              Study Abroad
+            </h3>
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.name}>
-                  <a href={service.url} className="text-white/80 hover:text-white transition duration-300">
-                    {service.name}
-                  </a>
+                  <Link 
+                    to={service.url} 
+                    className="text-white/80 hover:text-white transition duration-300 flex items-center group"
+                  >
+                    <span className="transform group-hover:translate-x-2 transition-transform duration-300">
+                      {service.name}
+                    </span>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -118,16 +138,16 @@ const FooterSection = () => {
             © {new Date().getFullYear()} Aspire Global. All rights reserved.
           </p>
           <div className="flex space-x-6">
-            <a href="#" className="text-white hover:text-white/80 transition-colors">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
               Facebook
             </a>
-            <a href="#" className="text-white hover:text-white/80 transition-colors">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
               Twitter
             </a>
-            <a href="#" className="text-white hover:text-white/80 transition-colors">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
               Instagram
             </a>
-            <a href="#" className="text-white hover:text-white/80 transition-colors">
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
               Youtube
             </a>
           </div>
@@ -138,6 +158,12 @@ const FooterSection = () => {
 };
 
 export default FooterSection;
+
+
+
+
+
+
 
 
 

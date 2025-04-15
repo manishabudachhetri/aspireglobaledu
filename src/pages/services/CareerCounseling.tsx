@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import FooterSection from '../../components/home/FooterSection';
 
 export default function CareerCounseling() {
   const services = [
@@ -81,11 +82,8 @@ export default function CareerCounseling() {
           </div>
         </div>
       </div>
+      <FooterSection />
     </div>
   );
 }
-
-
-
-
 
