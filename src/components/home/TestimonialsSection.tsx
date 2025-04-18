@@ -9,25 +9,25 @@ const TestimonialsSection = () => {
       id: 1,
       name: "Priya Chhetri",
       image: "https://images.unsplash.com/photo-1618355776464-8666794d2520?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fHN0dWRlbnR8ZW58MHx8MHx8fDA%3D",
-      quote: "Aspire Global Education made my dream of studying at LSE possible. Their guidance throughout the application process and test preparation was invaluable.",
+      quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     {
       id: 2,
       name: "David Rai",
       image: "https://images.unsplash.com/photo-1545696968-1a5245650b36?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fHN0dWRlbnR8ZW58MHx8MHx8fDA%3D",
-      quote: "Their test preparation courses helped me improve my IELTS score from 6.5 to 8.0. The visa assistance team made the intimidating immigration process simple and stress-free.",
+      quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     {
       id: 3,
       name: "Nisha Thapa",
       image: "https://images.unsplash.com/photo-1544717305-2782549b5136?w=500&auto=format&fit=crop",
-      quote: "The career counseling services helped me choose the perfect university program. I'm now pursuing my dream course at Oxford University.",
+      quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     {
       id: 4,
       name: "Ruhi Karki",
       image: "https://images.unsplash.com/photo-1529470839332-78ad660a6a82?w=500&auto=format&fit=crop",
-      quote: "Outstanding support from start to finish. Their visa assistance made the complex application process smooth and successful.",
+      quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     }
   ];
 
@@ -43,7 +43,7 @@ const TestimonialsSection = () => {
         <div className="text-center mb-12 max-w-3xl mx-auto">
           <p className="text-[#FF8E3C] text-2xl mb-2">Feedback</p>
           <h2 className="text-3xl md:text-3xl font-bold mb-4">
-            <span className="text-[#074293]">What Our Students Say</span>
+            <span className="text-[#074293]">What Students Say?</span>
           </h2>
         </div>
 
@@ -63,24 +63,24 @@ const TestimonialsSection = () => {
                     {testimonials
                       .slice(slideIndex * 2, (slideIndex * 2) + 2)
                       .map((testimonial) => (
-                        <div key={testimonial.id} className="bg-white shadow-lg">
-                          <div className="flex flex-col md:flex-row h-full">
-                            <div className="md:w-1/3 h-[300px]">
-                              <div className="w-full h-full relative">
-                                <img
-                                  src={testimonial.image}
-                                  alt={testimonial.name}
-                                  className="absolute inset-0 w-full h-full object-cover"
-                                />
-                              </div>
+                        <div key={testimonial.id} className="bg-white shadow-lg p-10">
+                          <div className="flex flex-col md:flex-row h-full gap-10">
+                            <div className="md:w-2/5 h-[300px] relative p-3">
+                              <div className="absolute top-0 left-0 w-[100px] h-[100px] border-l-[15px] border-t-[15px] border-[#074293]" />
+                              <img
+                                src={testimonial.image}
+                                alt={testimonial.name}
+                                className="w-full h-full object-cover"
+                              />
                             </div>
-                            <div className="md:w-2/3 p-8">
+                            <div className="md:w-3/5">
                               <div className="flex flex-col h-full justify-center">
                                 <blockquote className="mb-6">
-                                  <p className="text-lg italic text-gray-600">"{testimonial.quote}"</p>
+                                  <p className="text-lg text-gray-600">{testimonial.quote}</p>
                                 </blockquote>
-                                <div>
-                                  <h4 className="font-bold text-lg text-[#074293]">{testimonial.name}</h4>
+                                <div className="flex items-center gap-2">
+                                  <span className="w-3 h-[3px] bg-[#074293] font-bold"></span>
+                                  <h4 className="text-lg text-[#074293]">{testimonial.name}</h4>
                                 </div>
                               </div>
                             </div>
@@ -115,6 +115,39 @@ const TestimonialsSection = () => {
 };
 
 export default TestimonialsSection;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

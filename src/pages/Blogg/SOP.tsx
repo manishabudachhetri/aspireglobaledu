@@ -1,7 +1,6 @@
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import FooterSection from "../../components/home/FooterSection";
-
-import { useState } from "react";
 
 interface BlogPost {
   date: string;
@@ -15,6 +14,21 @@ const SOPPage = () => {
   const navigate = useNavigate();
   const [currentPage] = useState(0);
   const postsPerPage = 3;
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+  }, []);
+
+  const handlePostClick = (path: string) => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+    navigate(path);
+  };
 
   const recommendedPosts: BlogPost[] = [
     {
@@ -137,12 +151,12 @@ const SOPPage = () => {
               <div
                 key={index}
                 className="bg-white overflow-hidden shadow-md text-left relative h-[420px] max-w-[350px] mx-auto w-full cursor-pointer hover:shadow-xl transition-all duration-300"
-                onClick={() => navigate(post.path)}
+                onClick={() => handlePostClick(post.path)}
                 role="button"
                 tabIndex={0}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
-                    navigate(post.path);
+                    handlePostClick(post.path);
                   }
                 }}
               >

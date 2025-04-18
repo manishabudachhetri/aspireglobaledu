@@ -1,10 +1,15 @@
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUsers, faFileLines, faMoneyCheckDollar } from '@fortawesome/free-solid-svg-icons';
-import { BsHourglassSplit } from "react-icons/bs";
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import FooterSection from '../../components/home/FooterSection';
 
-const GREPage = () => {
+const GRE: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+  }, []);
+
   return (
     <div className="flex flex-col w-full">
       {/* Header Section */}
@@ -187,7 +192,8 @@ const GREPage = () => {
   );
 };
 
-export default GREPage;
+export default GRE;
+
 
 
 

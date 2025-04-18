@@ -1,12 +1,36 @@
-import { Link } from "react-router-dom";
-import FooterSection from "../../components/home/FooterSection";
-import { useState } from "react";
+import { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import FooterSection from '../../components/home/FooterSection';
 
-const FreeCourses = () => {
+interface BlogPost {
+  date: string;
+  image: string;
+  title: string;
+  description: string;
+  path: string;
+}
+
+const FreeCoursesPage = () => {
+  const navigate = useNavigate();
   const [currentPage] = useState(0);
   const postsPerPage = 3;
 
-  const recommendedPosts = [
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+  }, []);
+
+  const handlePostClick = (path: string) => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+    navigate(path);
+  };
+
+  const recommendedPosts: BlogPost[] = [
     {
       date: "21th Dec",
       image: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -135,7 +159,8 @@ const FreeCourses = () => {
   );
 };
 
-export default FreeCourses;
+export default FreeCoursesPage;
+
 
 
 

@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import FooterSection from '../components/home/FooterSection';
 
 interface TestClass {
@@ -8,6 +9,23 @@ interface TestClass {
 }
 
 const PreparationClass: React.FC = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+  }, []);
+
+  const handleClassClick = (path: string) => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+    navigate(path);
+  };
+
   const testPrepClasses: TestClass[] = [
     { 
       name: 'PTE Class',
@@ -22,7 +40,7 @@ const PreparationClass: React.FC = () => {
     { 
       name: 'IELTS Class',
       image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop',
-      path: '/preparation/ielts'  // Make sure there's no trailing slash
+      path: '/preparation/ielts'
     },
     { 
       name: 'GRE Class',
@@ -42,10 +60,10 @@ const PreparationClass: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="min-h-screen">
       {/* Header Section */}
       <div 
-        className="relative w-full h-[300px] sm:h-[400px] bg-cover bg-center mt-20 sm:mt-32"
+        className="relative w-full h-[400px] bg-cover bg-center mt-32"
         style={{ 
           backgroundImage: 'url("https://images.unsplash.com/photo-1462536943532-57a629f6cc60?w=3000&auto=format&fit=crop&q=100&ixlib=rb-4.0.3")'
         }}
@@ -65,20 +83,19 @@ const PreparationClass: React.FC = () => {
       </div>
 
       {/* Classes Section */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="text-center mb-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-white">
+        <div className="text-center mb-12">
           <h1 className="text-[#FF8E3C] text-2xl mb-2">Preparation Class</h1>
           <h2 className="text-[#074293] text-3xl font-bold">Test Preparation Classes</h2>
         </div>
 
         {/* All Classes Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testPrepClasses.map((classItem, index) => (
-            <Link 
-              to={classItem.path}
+            <div 
               key={index}
-              replace={true}
-              className="bg-white shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group"
+              onClick={() => handleClassClick(classItem.path)}
+              className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer"
             >
               <div className="relative h-48 overflow-hidden">
                 <img 
@@ -93,7 +110,7 @@ const PreparationClass: React.FC = () => {
                   {classItem.name}
                 </h3>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>
@@ -103,6 +120,13 @@ const PreparationClass: React.FC = () => {
 };
 
 export default PreparationClass;
+
+
+
+
+
+
+
 
 
 

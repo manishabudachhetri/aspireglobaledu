@@ -6,6 +6,11 @@ const AboutSection = () => {
   const navigate = useNavigate();
 
   const handleReadMore = () => {
+    // Navigate and force scroll to top
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
     navigate('/about');
   };
 
@@ -45,6 +50,7 @@ const AboutSection = () => {
 };
 
 export default AboutSection;
+
 
 
 

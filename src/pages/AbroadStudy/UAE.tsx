@@ -1,8 +1,8 @@
-import React, { useState, FormEvent, useEffect } from 'react';
+import React, { useState, FormEvent, ChangeEvent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import FooterSection from '../../components/home/FooterSection';
 
-interface ContactForm {
+interface FormData {
   fullName: string;
   address: string;
   email: string;
@@ -16,51 +16,24 @@ interface ContactForm {
   enquiry: string;
 }
 
-const countryLinks = [
-  { name: 'Study in Malta', path: '/abroad-study/malta' },
-  { name: 'Study in UAE', path: '/abroad-study/uae' },
-  { name: 'Study in UK', path: '/abroad-study/uk' },
-  { name: 'Study in Australia', path: '/abroad-study/australia' }
-];
-
-const Australia: React.FC = () => {
-  const navigate = useNavigate();
-
-  const handleCountryNavigation = (path: string) => {
-    navigate(path);
-    window.scrollTo({
-      top: 0,
-      behavior: 'instant'
-    });
-  };
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  const [formData, setFormData] = useState<ContactForm>({
+const UAE = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState<FormData>({
     fullName: '',
     address: '',
     email: '',
     contactNumber: '',
     qualification: '',
     passedOutYear: '',
-    preferredCountry: 'Australia',
+    preferredCountry: 'UAE',
     preferredDegree: '',
     course: '',
     specificCourse: '',
     enquiry: ''
   });
+  const navigate = useNavigate();
 
-  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-  const [submitStatus, setSubmitStatus] = useState<{
-    success?: string;
-    error?: string;
-  }>({});
-
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -71,31 +44,42 @@ const Australia: React.FC = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitStatus({});
-
     try {
-      // Add form validation here
       await new Promise(resolve => setTimeout(resolve, 1000));
-      setSubmitStatus({ success: 'Thank you for your inquiry. We will contact you soon!' });
       setFormData({
-        ...formData,
         fullName: '',
         address: '',
         email: '',
         contactNumber: '',
         qualification: '',
         passedOutYear: '',
+        preferredCountry: 'UAE',
         preferredDegree: '',
         course: '',
         specificCourse: '',
         enquiry: ''
       });
     } catch (error) {
-      setSubmitStatus({ error: error instanceof Error ? error.message : 'An error occurred' });
+      console.error('Error submitting form:', error);
     } finally {
       setIsSubmitting(false);
     }
   };
+
+  const handleCountryNavigation = (path: string) => {
+    navigate(path);
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+  };
+
+  const countryLinks = [
+    { name: 'Study in Malta', path: '/abroad-study/malta' },
+    { name: 'Study in UAE', path: '/abroad-study/uae' },
+    { name: 'Study in UK', path: '/abroad-study/uk' },
+    { name: 'Study in Australia', path: '/abroad-study/australia' }
+  ];
 
   return (
     <div className="flex flex-col w-full">
@@ -108,10 +92,10 @@ const Australia: React.FC = () => {
       >
         <div className="absolute inset-0 bg-black bg-opacity-35 flex items-center justify-center">
           <div className="text-center text-white">
-            <h1 className="text-4xl font-bold">Study in Australia</h1>
+            <h1 className="text-4xl font-bold">Study in UAE</h1>
             <p className="mt-2">
               <Link to="/" className="hover:text-[#FF8E3C]">Home</Link> /{" "}
-              <Link to="/abroad-study" className="hover:text-[#FF8E3C]">Abroad Study</Link> / Australia
+              <Link to="/abroad-study" className="hover:text-[#FF8E3C]">Abroad Study</Link> / UAE
             </p>
           </div>
         </div>
@@ -127,43 +111,47 @@ const Australia: React.FC = () => {
           {/* Left Section - Main Content */}
           <div className="lg:col-span-2 space-y-8">
             <div className="space-y-1">
-              <p className="text-[#FF8E3C] text-xl">Pick Your Destinations</p>
-              <h2 className="text-4xl font-semibold text-[#074293]">Study In Australia - Build Your Future in a Global Education Hub!</h2>
+              <p className="text-[#FF8E3C] text-xl">Pick Your Destination</p>
+              <h2 className="text-4xl font-semibold text-[#074293]">Study in Dubai - Unlock Global Opportunities in the Heart of the UAE
+              !</h2>
             </div>
+            
             <img 
-              src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
-              alt="Australia overview"
+              src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=2000&auto=format&fit=crop&q=80" 
+              alt="Dubai University" 
               className="w-full h-[400px] object-cover shadow-md"
             />
 
             <section>
               <h3 className="text-2xl font-semibold mb-2 text-[#074293]">Country Overview</h3>
-              <p className="text-justify mb-4">
-                Australia, a continent and country combined, offers world-renowned education with its innovative teaching methodology and cutting-edge research facilities. Known for its high standard of living, multicultural society, and stunning landscapes, Australia provides international students with an unparalleled study abroad experience.
-              </p>
-              
-              <p className="text-justify mb-4">
-              Australia is one of the most popular study destinations for Nepali students – offering top-quality education, work opportunities, and pathways to permanent residency. With Aspire Global Education, you can access career-focused programs in Business, Information Technology, and Vocational Courses with strong PR prospects.
+              <p className="text-justify">
+              Dubai is rapidly becoming a top choice for Nepali students seeking international education, affordable tuition, and work experience in a global city. With Aspire Global Education, you can study at reputed universities and colleges in Dubai while enjoying flexible tuition plans, full-time work opportunities, and a direct path to global careers.
 
+
+              </p>
+              <p className="text-justify mt-4">
+                Looking to study in one of the most dynamic and innovative education systems? The UAE offers internationally accredited programs, state-of-the-art facilities, and a vibrant multicultural environment perfect for Nepali students aiming for global success.
               </p>
             </section>
 
             <section>
-              <h3 className="text-2xl font-semibold mb-2 text-[#074293]">Why Choose Australia for Your Higher Education?</h3>
+              <h3 className="text-2xl font-semibold mb-2 text-[#074293]">Why Choose the UAE for Your Higher Studies?</h3>
               <ul className="list-disc pl-6 space-y-1">
-                <li>Globally Recognized Degrees & Qualifications</li>
-	<li>	High Employability & Skilled Job Market</li>
-	<li>	Pathway to Permanent Residency (PR)</li>
-	<li>	20-24 Months Post-Study Work Visa</li>
-	<li>	Student-Friendly Environment & Diverse Culture</li>
-	<li>	Part-Time Work Allowed During Studies</li>
+              <li>20+ Colleges & Universities with International Recognition</li>
+	<li>Affordable Tuition Fees with Payment After Visa</li>
+
+	<li>	100% Visa Guarantee with Expert Support</li>
+	<li>	Full-Time Work & Part-Time Study Options</li>
+	<li>	Credit Transfer to UK, USA, Canada, Europe & Australia</li>
+	<li>	Vibrant Multicultural Lifestyle & Safe Environment</li>
+	<li>	Job Placement Opportunities in Dubai & Europe</li>
 
 
               </ul>
             </section>
 
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-[#074293]">Popular Programs in Australia</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-[#074293]">Popular Courses We Offer in Dubai</h3>
               <h4 className="text-xl font-semibold mb-3 text-[#074293]">Academic Programs:</h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                 <span className="bg-[#FF8E3C] text-white px-4 py-2 text-sm font-medium hover:bg-[#e87d2f] transition-colors duration-200 text-center">
@@ -172,75 +160,91 @@ const Australia: React.FC = () => {
                 <span className="bg-[#FF8E3C] text-white px-4 py-2 text-sm font-medium hover:bg-[#e87d2f] transition-colors duration-200 text-center">
                   Bachelor's & Master's in Information Technology
                 </span>
-              </div>
-
-              <h3 className="text-xl font-semibold mb-3 text-[#074293]">Vocational PR Pathway Programs:</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                 <span className="bg-[#FF8E3C] text-white px-4 py-2 text-sm font-medium hover:bg-[#e87d2f] transition-colors duration-200 text-center">
-                  Certificate IV in Automotive Mechanical Diagnosis
+                  Healthcare & Nursing Programs
                 </span>
                 <span className="bg-[#FF8E3C] text-white px-4 py-2 text-sm font-medium hover:bg-[#e87d2f] transition-colors duration-200 text-center">
-                  Certificate IV in Automotive Management
+                  Hospitality & Tourism Management
                 </span>
                 <span className="bg-[#FF8E3C] text-white px-4 py-2 text-sm font-medium hover:bg-[#e87d2f] transition-colors duration-200 text-center">
-                  Certificate III in Light Vehicle Mechanical Technology
-                </span>
-                <span className="bg-[#FF8E3C] text-white px-4 py-2 text-sm font-medium hover:bg-[#e87d2f] transition-colors duration-200 text-center">
-                  Diploma in Automotive Management
-                </span>
-                <span className="bg-[#FF8E3C] text-white px-4 py-2 text-sm font-medium hover:bg-[#e87d2f] transition-colors duration-200 text-center">
-                  Diploma in Leadership and Management
-                </span>
-                <span className="bg-[#FF8E3C] text-white px-4 py-2 text-sm font-medium hover:bg-[#e87d2f] transition-colors duration-200 text-center">
-                  Advanced Diploma of Leadership and Management
+                  Engineering & Architecture
                 </span>
               </div>
-              <h4 className="text-xl font-semibold mb-3 text-[#074293]">Affordable Tuition Fees & Flexible Payment Plans</h4>
-              <p className="text-justify mb-4">
-              We work with reputed colleges and institutions across Australia offering competitive tuition fees.
 
+              <h4 className="text-xl font-semibold mb-3 text-[#074293]">Vocational & Career-Focused Courses:</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <span className="bg-[#FF8E3C] text-white px-4 py-2 text-sm font-medium hover:bg-[#e87d2f] transition-colors duration-200 text-center">
+                  Digital Marketing
+                </span>
+                <span className="bg-[#FF8E3C] text-white px-4 py-2 text-sm font-medium hover:bg-[#e87d2f] transition-colors duration-200 text-center">
+                  Culinary Arts & Hotel Management
+                </span>
+                <span className="bg-[#FF8E3C] text-white px-4 py-2 text-sm font-medium hover:bg-[#e87d2f] transition-colors duration-200 text-center">
+                  Logistics & Supply Chain
+                </span>
+                <span className="bg-[#FF8E3C] text-white px-4 py-2 text-sm font-medium hover:bg-[#e87d2f] transition-colors duration-200 text-center">
+                  Graphic Design & Media
+                </span>
+                <span className="bg-[#FF8E3C] text-white px-4 py-2 text-sm font-medium hover:bg-[#e87d2f] transition-colors duration-200 text-center">
+                  Aviation & Travel Management
+                </span>
+              </div>
+              <p className="text-justify mt-4">
+                These programs are designed to provide practical skills, strong employability, and global career pathways.
               </p>
 
-             
-            </section>  
-
-            <section>
-              <h3 className="text-2xl font-semibold mb-4 text-[#074293]">Complete Services for Nepali Students</h3>
-              <p className="text-justify mb-4">At Aspire Global Education, we offer full support to make your Australian education journey smooth and successful:</p>
-              <ul className="list-none pl-6 space-y-2">
-                <li className="flex items-center">
-                  <span className="text-[#FF8E3C] text-xl mr-2">➜</span>
-                  Free Counseling & Course Selection
-                </li>
-                <li className="flex items-center">
-                  <span className="text-[#FF8E3C] text-xl mr-2">➜</span>
-                  Institute Admissions & Application Support
-                </li>
-                <li className="flex items-center">
-                  <span className="text-[#FF8E3C] text-xl mr-2">➜</span>
-                  Visa Processing Assistance
-                </li>
-                <li className="flex items-center">
-                  <span className="text-[#FF8E3C] text-xl mr-2">➜</span>
-                  GTE (Genuine Temporary Entrant) Preparation
-                </li>
-                <li className="flex items-center">
-                  <span className="text-[#FF8E3C] text-xl mr-2">➜</span>
-                  Pre-Departure Orientation
-                </li>
-                <li className="flex items-center">
-                  <span className="text-[#FF8E3C] text-xl mr-2">➜</span>
-                  Ongoing Support Even After You Land in Australia
-                </li>
+              <h4 className="text-xl font-semibold mb-3 mt-8 text-[#074293]">Affordable Tuition Fees & Easy Payment Plans</h4>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>No need to pay the full fee upfront – pay tuition after your visa is approved.</li>
+                <li>We partner with affordable institutions offering international quality education.</li>
               </ul>
             </section>
 
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-[#074293]">Turn Your Australian Study Dream into Reality
-              </h3>
+              <h3 className="text-2xl font-semibold mb-4 text-[#074293]">Full Services for Nepali Students</h3>
+              <p className="text-justify mb-4">
+                With Aspire Global Education, your dream of studying in Dubai is fully supported from start to finish:
+              </p>
+              <ul className="space-y-1">
+                <li className="flex items-start gap-3">
+                  <span className="text-[#FF8E3C] text-xl">➜</span>
+                  <span>Free Counseling & Course Selection</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#FF8E3C] text-xl">➜</span>
+                  <span>Fast-Track Admission Process</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#FF8E3C] text-xl">➜</span>
+                  <span>Visa Processing & Documentation Support</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#FF8E3C] text-xl">➜</span>
+                  <span>Hostel & Accommodation Arrangement</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#FF8E3C] text-xl">➜</span>
+                  <span>Airport Pickup & Welcome Assistance</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#FF8E3C] text-xl">➜</span>
+                  <span>Job Placement Support in Dubai</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#FF8E3C] text-xl">➜</span>
+                  <span>Ongoing Assistance After Arrival</span>
+                </li>
+              </ul>
+              <p className="text-justify mt-6">
+                As a Dubai-based consultancy, we're always close to help you succeed.
+              </p>
+
+              <h3 className="text-2xl font-semibold mb-4 mt-8 text-[#074293]">Start Your Dubai Study Journey Today</h3>
               <p className="text-justify">
-              Whether you’re aiming for a degree in Business or IT, or want to pursue a vocational course with a PR pathway—Australia is the place to be.
-              Get in touch with Aspire Global Education today to start your application with expert guidance and trusted support.
+                Whether you're planning to study business, IT, hospitality, or vocational courses, Dubai opens the door to global education, job opportunities, and international experience.
+              </p>
+              <p className="text-justify mt-4">
+                Contact Aspire Global Education today to get started – and build your future in Dubai with confidence.
               </p>
             </section>
           </div>
@@ -255,7 +259,7 @@ const Australia: React.FC = () => {
                     key={index}
                     onClick={() => handleCountryNavigation(link.path)}
                     className={`text-left px-6 py-4 border transition-all duration-300 ${
-                      link.name === "Study in Australia"
+                      link.name === "Study in UAE"
                         ? "bg-[#FF8E3C] text-white"
                         : "bg-[#FFE5D0] text-[#074293] hover:bg-[#074293] hover:text-white"
                     }`}
@@ -267,7 +271,7 @@ const Australia: React.FC = () => {
             </div>
 
             {/* Form Section */}
-            <div className="bg-[#f5f5f5] shadow-md overflow-hidden mt-16">
+            <div className="bg-[#f5f5f5] shadow-md overflow-hidden">
               <div className="relative">
                 <img 
                   src="https://images.unsplash.com/photo-1522083165195-3424ed129620?w=500&auto=format&fit=crop&q=60" 
@@ -288,6 +292,7 @@ const Australia: React.FC = () => {
                       value={formData.fullName}
                       onChange={handleInputChange}
                       className="w-full px-3 py-2 border text-sm"
+                      required
                     />
                   </div>
                   <div>
@@ -298,6 +303,7 @@ const Australia: React.FC = () => {
                       value={formData.address}
                       onChange={handleInputChange}
                       className="w-full px-3 py-2 border text-sm"
+                      required
                     />
                   </div>
                   <div>
@@ -308,6 +314,7 @@ const Australia: React.FC = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       className="w-full px-3 py-2 border text-sm"
+                      required
                     />
                   </div>
                   <div>
@@ -318,6 +325,7 @@ const Australia: React.FC = () => {
                       value={formData.contactNumber}
                       onChange={handleInputChange}
                       className="w-full px-3 py-2 border text-sm"
+                      required
                     />
                   </div>
                   <div>
@@ -343,6 +351,7 @@ const Australia: React.FC = () => {
                       value={formData.passedOutYear}
                       onChange={handleInputChange}
                       className="w-full px-3 py-2 border text-sm"
+                      required
                     />
                   </div>
                   <div>
@@ -380,14 +389,16 @@ const Australia: React.FC = () => {
                       required
                     >
                       <option value="">Select Course</option>
-                      <option value="Bachelor's & Master's in Business Administration">Bachelor's & Master's in Business Administration</option>
-                      <option value="Bachelor's & Master's in Information Technology">Bachelor's & Master's in Information Technology</option>
-                      <option value="Certificate IV in Automotive Mechanical Diagnosis">Certificate IV in Automotive Mechanical Diagnosis</option>
-                      <option value="Certificate IV in Automotive Management">Certificate IV in Automotive Management</option>
-                      <option value="Certificate III in Light Vehicle Mechanical Technology">Certificate III in Light Vehicle Mechanical Technology</option>
-                      <option value="Diploma in Automotive Management">Diploma in Automotive Management</option>
-                      <option value="Diploma in Leadership and Management">Diploma in Leadership and Management</option>
-                      <option value="Advanced Diploma of Leadership and Management">Advanced Diploma of Leadership and Management</option>
+                      <option value="Business Administration">Business Administration</option>
+                      <option value="Information Technology">Information Technology</option>
+                      <option value="Healthcare & Nursing">Healthcare & Nursing</option>
+                      <option value="Hospitality & Tourism Management">Hospitality & Tourism Management</option>
+                      <option value="Engineering & Architecture">Engineering & Architecture</option>
+                      <option value="Digital Marketing">Digital Marketing</option>
+                      <option value="Culinary Arts & Hotel Management">Culinary Arts & Hotel Management</option>
+                      <option value="Logistics & Supply Chain">Logistics & Supply Chain</option>
+                      <option value="Graphic Design & Media">Graphic Design & Media</option>
+                      <option value="Aviation & Travel Management">Aviation & Travel Management</option>
                     </select>
                   </div>
                   <div>
@@ -397,7 +408,7 @@ const Australia: React.FC = () => {
                       name="specificCourse"
                       value={formData.specificCourse}
                       onChange={handleInputChange}
-                      className="w-full px-3 py-2 border text-sm bg-white"
+                      className="w-full px-3 py-2 border text-sm"
                     />
                   </div>
                   <div>
@@ -408,6 +419,7 @@ const Australia: React.FC = () => {
                       onChange={handleInputChange}
                       rows={3}
                       className="w-full px-3 py-2 border text-sm"
+                      required
                     ></textarea>
                   </div>
                   <div className="flex justify-start">
@@ -430,7 +442,8 @@ const Australia: React.FC = () => {
   );
 };
 
-export default Australia;
+export default UAE;
+
 
 
 

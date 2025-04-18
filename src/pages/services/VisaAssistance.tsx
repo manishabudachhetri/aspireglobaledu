@@ -1,15 +1,15 @@
-import { Link } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import FooterSection from '../../components/home/FooterSection';
+import ServiceNavigation from '../../components/services/ServiceNavigation';
 
 export default function VisaAssistance() {
-  const services = [
-    { name: "Career Counseling", path: "/services/career-counseling" },
-    { name: "Visa Assistance", path: "/services/visa-assistance" },
-    { name: "Test Preparation", path: "/services/test-preparation" },
-    { name: "Study Abroad", path: "/services/study-abroad" },
-    { name: "Admission Guide", path: "/services/admission-guide" },
-    { name: "Insurance", path: "/services/insurance" },
-  ];
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+  }, []);
 
   return (
     <div className="flex flex-col w-full">
@@ -41,21 +41,7 @@ export default function VisaAssistance() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Right Side - Services Navigation */}
           <div className="md:col-span-1 order-2">
-            <div className="flex flex-col gap-2">
-              {services.map((service, index) => (
-                <Link
-                  key={index}
-                  to={service.path}
-                  className={`text-left px-6 py-4 border  transition-all duration-300 ${
-                    service.name === "Visa Assistance"
-                      ? "bg-[#FF8E3C] text-white"
-                      : "bg-[#FFE5D0] text-[#074293] hover:bg-[#074293] hover:text-white"
-                  }`}
-                >
-                  {service.name}
-                </Link>
-              ))}
-            </div>
+            <ServiceNavigation />
           </div>
 
           {/* Left Side - Content */}
@@ -107,6 +93,7 @@ export default function VisaAssistance() {
     </div>
   );
 }
+
 
 
 

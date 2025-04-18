@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface Country {
   name: string;
   image: string;
+  path: string;
 }
 
 interface StudyAbroadSidebarProps {
@@ -12,41 +14,36 @@ interface StudyAbroadSidebarProps {
 
 const countries: Country[] = [
   { 
-    name: 'USA', 
-    image: 'https://images.unsplash.com/photo-1556146385-97d8a0b5e66b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3' 
+    name: 'Malta', 
+    image: 'https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
+    path: '/abroad-study/malta'
   },
   { 
-    name: 'Dubai', 
-    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3' 
-  },
-  { 
-    name: 'Canada', 
-    image: 'https://images.unsplash.com/photo-1517935706615-2717063c2225?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3' 
-  },
-  { 
-    name: 'Europe', 
-    image: 'https://images.unsplash.com/photo-1541343672885-9be56236302a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3' 
+    name: 'UAE', 
+    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
+    path: '/abroad-study/uae'
   },
   { 
     name: 'UK', 
-    image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3' 
+    image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
+    path: '/abroad-study/uk'
   },
   { 
-    name: 'New Zealand', 
-    image: 'https://images.unsplash.com/photo-1589871973318-9ca1258faa5d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3' 
-  },
-  { 
-    name: 'Malta', 
-    image: 'https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3' 
-  },
-  { 
-    name: 'Spain', 
-    image: 'https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3' 
-  },
+    name: 'Australia', 
+    image: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
+    path: '/abroad-study/australia'
+  }
 ];
 
 const StudyAbroadSidebar: React.FC<StudyAbroadSidebarProps> = ({ isOpen, onClose }) => {
+  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(isOpen);
+
+  const handleApplyNow = (path: string) => {
+    onClose(); // Close the sidebar
+    navigate(path); // Navigate to the country page
+    window.scrollTo(0, 0); // Scroll to top
+  };
 
   // Update local state when prop changes
   React.useEffect(() => {
@@ -112,13 +109,16 @@ const StudyAbroadSidebar: React.FC<StudyAbroadSidebarProps> = ({ isOpen, onClose
             {countries.map((country) => (
               <div
                 key={country.name}
-                className="relative h-40 md:h-48 lg:h-52 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group cursor-pointer"
+                className="relative h-64 md:h-72 lg:h-80 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 group cursor-pointer"
                 style={{ backgroundImage: `url(${country.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/70 group-hover:from-black/20 group-hover:to-black/80 transition-all duration-300"></div>
                 <div className="absolute bottom-2 left-2 text-white z-10 p-3">
                   <h3 className="text-lg md:text-xl font-semibold mb-1 group-hover:transform group-hover:translate-x-1 transition-transform duration-300">{country.name}</h3>
-                  <button className="mt-1 px-3 py-1.5 bg-[#FF8E3C] text-white text-sm rounded-md hover:bg-[#e87d2f] transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                  <button 
+                    onClick={() => handleApplyNow(country.path)}
+                    className="mt-1 px-3 py-1.5 bg-[#FF8E3C] text-white text-sm rounded-md hover:bg-[#e87d2f] transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                  >
                     Apply Now
                   </button>
                 </div>
@@ -132,6 +132,9 @@ const StudyAbroadSidebar: React.FC<StudyAbroadSidebarProps> = ({ isOpen, onClose
 };
 
 export default StudyAbroadSidebar;
+
+
+
 
 
 

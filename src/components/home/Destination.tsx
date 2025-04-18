@@ -1,18 +1,27 @@
 import { useState } from 'react';
 import { BsArrowRight } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Destination: React.FC = () => {
+  const navigate = useNavigate();
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handlePostClick = (path: string) => {
+    navigate(path);
+    // Scroll to top immediately after navigation
+    window.scrollTo(0, 0);
+  };
+
   const destinations = [
     {
-      country: "USA",
-      image: "https://images.unsplash.com/photo-1556146385-97d8a0b5e66b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHVzYXxlbnwwfHwwfHx8MA%3D%3D",
-      path: "/abroad-study/usa"
+      country: "Malta",
+      image: "https://images.unsplash.com/photo-1602087594298-706ccc894bfd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      path: "/abroad-study/malta"
     },
     {
-      country: "France",
-      image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop",
-      path: "/abroad-study/france"
+      country: "UAE",
+      image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      path: "/abroad-study/uae"
     },
     {
       country: "UK",
@@ -20,13 +29,11 @@ const Destination: React.FC = () => {
       path: "/abroad-study/uk"
     },
     {
-      country: "Canada",
-      image: "https://images.unsplash.com/photo-1517935706615-2717063c2225?q=80&w=2070&auto=format&fit=crop",
-      path: "/abroad-study/canada"
+      country: "Australia",
+      image: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      path: "/abroad-study/australia"
     }
   ];
-
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
     setCurrentIndex((prev) => (prev + 2 >= destinations.length ? 0 : prev + 2));
@@ -57,7 +64,13 @@ const Destination: React.FC = () => {
             </div>
 
             <Link 
-              to="/abroad-study" 
+              to="/abroad-study"
+              onClick={() => {
+                window.scrollTo({
+                  top: 0,
+                  behavior: 'instant'
+                });
+              }}
               className="inline-flex items-center space-x-2 bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 transition duration-300"
             >
               <span>View All</span>
@@ -73,9 +86,9 @@ const Destination: React.FC = () => {
                   const index = (currentIndex + offset) % destinations.length;
                   const destination = destinations[index];
                   return (
-                    <Link
+                    <div
                       key={index}
-                      to={destination.path}
+                      onClick={() => handlePostClick(destination.path)}
                       className="aspect-[2/3] w-full overflow-hidden relative group cursor-pointer"
                     >
                       <img 
@@ -90,7 +103,7 @@ const Destination: React.FC = () => {
                           Learn More →
                         </span>
                       </div>
-                    </Link>
+                    </div>
                   );
                 })}
               </div>
@@ -145,6 +158,18 @@ const Destination: React.FC = () => {
 };
 
 export default Destination;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,7 +1,25 @@
-import { Link } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import FooterSection from '../../components/home/FooterSection';
 
 export default function CareerCounseling() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+  }, []);
+
+  const handleServiceClick = (path: string) => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+    navigate(path);
+  };
+
   const services = [
     { name: "Career Counseling", path: "/services/career-counseling" },
     { name: "Visa Assistance", path: "/services/visa-assistance" },
@@ -66,17 +84,17 @@ export default function CareerCounseling() {
           <div className="md:col-span-1 order-1 md:order-2">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-1 gap-2">
               {services.map((service, index) => (
-                <Link
+                <div
                   key={index}
-                  to={service.path}
-                  className={`text-left px-4 sm:px-6 py-3 sm:py-4 border  transition-all duration-300 ${
+                  onClick={() => handleServiceClick(service.path)}
+                  className={`text-left px-4 sm:px-6 py-3 sm:py-4 border transition-all duration-300 cursor-pointer ${
                     service.name === "Career Counseling"
                       ? "bg-[#FF8E3C] text-white"
                       : "bg-[#FFE5D0] text-[#074293] hover:bg-[#074293] hover:text-white"
                   } text-sm sm:text-base`}
                 >
                   {service.name}
-                </Link>
+                </div>
               ))}
             </div>
           </div>
@@ -86,4 +104,5 @@ export default function CareerCounseling() {
     </div>
   );
 }
+
 

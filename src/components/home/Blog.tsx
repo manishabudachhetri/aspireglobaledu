@@ -29,6 +29,10 @@ const Blog = () => {
   const navigate = useNavigate();
 
   const handlePostClick = (path: string) => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
     navigate(path);
   };
 
@@ -79,5 +83,6 @@ const Blog = () => {
 };
 
 export default Blog;
+
 
 

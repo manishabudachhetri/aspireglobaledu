@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import FooterSection from '../components/home/FooterSection';
@@ -117,6 +117,13 @@ const Blogg = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 6;
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+  }, []);
+
   // Calculate total pages
   const totalPages = Math.ceil(blogPosts.length / postsPerPage);
 
@@ -126,6 +133,10 @@ const Blogg = () => {
   const currentPosts = blogPosts.slice(indexOfFirstPost, indexOfLastPost);
 
   const handlePostClick = (path: string) => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
     navigate(path);
   };
 
@@ -133,7 +144,6 @@ const Blogg = () => {
   const handlePageChange = (pageNumber: number) => {
     if (pageNumber >= 1 && pageNumber <= totalPages) {
       setCurrentPage(pageNumber);
-      // Scroll to top of the blog section
       window.scrollTo({ top: 400, behavior: 'smooth' });
     }
   };

@@ -1,8 +1,10 @@
 
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import logoImage from '../../assets/images/aspirelogo.jpeg';
 
 const FooterSection = () => {
+  const navigate = useNavigate();
+
   const quickLinks = [
     { name: 'Home', url: '/' },
     { name: 'About Us', url: '/about' },
@@ -15,16 +17,27 @@ const FooterSection = () => {
   ];
 
   const services = [
-    { name: 'USA', url: '/abroad-study/usa' },
-    { name: 'Australia', url: '/abroad-study/australia' },
-    { name: 'Canada', url: '/abroad-study/canada' },
+    { name: 'Malta', url: '/abroad-study/malta' },
+    { name: 'UAE', url: '/abroad-study/uae' },
     { name: 'UK', url: '/abroad-study/uk' },
-    { name: 'New Zealand', url: '/abroad-study/new zealand' },
-    { name: 'France', url: '/abroad-study/france' },
-    { name: 'Germany', url: '/abroad-study/germany' },
-    { name: 'Spain', url: '/abroad-study/spain' },
-    { name: 'Europe', url: '/abroad-study/europe' }
+    { name: 'Australia', url: '/abroad-study/australia' },
   ];
+
+  const handleQuickLinkClick = (url: string) => {
+    navigate(url);
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+  };
+
+  const handleStudyAbroadClick = (url: string) => {
+    navigate(url);
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+  };
 
   const contactInfo = [
     { icon: 'location', text: 'Maitidevi, Setopool, Kathmandu Nepal' },
@@ -49,12 +62,12 @@ const FooterSection = () => {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.
             </p>
             
-            <Link 
-              to="/about"
+            <button 
+              onClick={() => handleQuickLinkClick('/about')}
               className="bg-[#0a3b7c] text-white px-8 py-3 border-2 border-[#0a3b7c] hover:bg-[#074293] hover:border-[#074293] transition-all font-semibold inline-block"
             >
               About Us →
-            </Link>
+            </button>
           </div>
 
           {/* Important Links */}
@@ -65,14 +78,14 @@ const FooterSection = () => {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link 
-                    to={link.url} 
-                    className="text-white/80 hover:text-white transition duration-300 flex items-center group"
+                  <button 
+                    onClick={() => handleQuickLinkClick(link.url)}
+                    className="text-white/80 hover:text-white transition duration-300 flex items-center group w-full text-left"
                   >
                     <span className="transform group-hover:translate-x-2 transition-transform duration-300">
                       {link.name}
                     </span>
-                  </Link>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -86,14 +99,14 @@ const FooterSection = () => {
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.name}>
-                  <Link 
-                    to={service.url} 
-                    className="text-white/80 hover:text-white transition duration-300 flex items-center group"
+                  <button 
+                    onClick={() => handleStudyAbroadClick(service.url)}
+                    className="text-white/80 hover:text-white transition duration-300 flex items-center group w-full text-left"
                   >
                     <span className="transform group-hover:translate-x-2 transition-transform duration-300">
                       {service.name}
                     </span>
-                  </Link>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -127,30 +140,51 @@ const FooterSection = () => {
                 </li>
               ))}
             </ul>
+
+            {/* Social Links */}
+            <h3 className="text-xl font-bold mb-6 mt-8 relative after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-1 after:w-32 after:bg-white">
+              Social Links
+            </h3>
+            <div className="flex space-x-2"> {/* Changed from space-x-4 to space-x-2 */}
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white">
+                <img 
+                  src="https://img.icons8.com/?size=48&id=118497&format=png" 
+                  alt="Facebook"
+                  className="w-8 h-8"
+                />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white">
+                <img 
+                  src="https://img.icons8.com/?size=48&id=Xy10Jcu1L2Su&format=png" 
+                  alt="Instagram"
+                  className="w-8 h-8"
+                />
+              </a>
+              <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white">
+                <img 
+                  src="https://img.icons8.com/?size=80&id=3veRWJpxPPDH&format=png" 
+                  alt="TikTok"
+                  className="w-8 h-8"
+                />
+              </a>
+              <a href="https://wa.me/+977123456789" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white">
+                <img 
+                  src="https://img.icons8.com/?size=48&id=16713&format=png" 
+                  alt="WhatsApp"
+                  className="w-8 h-8"
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Copyright - Full width orange section */}
+      {/* Copyright section */}
       <div className="bg-[#FF8E3C] py-4">
         <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-white">
             © {new Date().getFullYear()} Aspire Global. All rights reserved.
           </p>
-          <div className="flex space-x-6">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
-              Facebook
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
-              Twitter
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
-              Instagram
-            </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
-              Youtube
-            </a>
-          </div>
         </div>
       </div>
     </footer>
@@ -158,6 +192,16 @@ const FooterSection = () => {
 };
 
 export default FooterSection;
+
+
+
+
+
+
+
+
+
+
 
 
 

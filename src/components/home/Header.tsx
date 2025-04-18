@@ -108,10 +108,10 @@ const Header = () => {
               <Link to="/" className="block text-gray-800 hover:text-[#074293] font-bold">Home</Link>
               <Link to="/about" className="block text-gray-800 hover:text-[#074293] font-bold">About Us</Link>
               <Link to="/services" className="block text-gray-800 hover:text-[#074293] font-bold">Services</Link>
-              <Link to="/preparation-classes" className="block text-gray-800 hover:text-[#074293] font-bold">Preparation Class</Link>
+              <Link to="/preparation class" className="block text-gray-800 hover:text-[#074293] font-bold">Preparation Class</Link>
               <Link to="/blog" className="block text-gray-800 hover:text-[#074293] font-bold">Blog</Link>
               <Link to="/gallery" className="block text-gray-800 hover:text-[#074293] font-bold">Gallery</Link>
-              <Link to="/success" className="block text-gray-800 hover:text-[#074293] font-bold">Visa Granted</Link>
+              <Link to="/visagranted" className="block text-gray-800 hover:text-[#074293] font-bold">Visa Granted</Link>
               <Link to="/contact" className="block text-gray-800 hover:text-[#074293] font-bold">Contact</Link>
             </div>
           </div>
@@ -122,6 +122,7 @@ const Header = () => {
 };
 
 export default Header;
+
 
 
 

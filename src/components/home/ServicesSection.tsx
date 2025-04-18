@@ -1,7 +1,17 @@
 
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const ServicesSection: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleServiceClick = (path: string) => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+    navigate(path);
+  };
+
   const services = [
     {
       title: 'Career Counseling',
@@ -50,10 +60,10 @@ const ServicesSection: React.FC = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Link 
-              to={service.path}
-              key={index} 
-              className="bg-white overflow-hidden shadow-md hover:-translate-y-1 transition-transform duration-300 group border border-[#074293]"
+            <div 
+              key={index}
+              onClick={() => handleServiceClick(service.path)}
+              className="bg-white overflow-hidden shadow-md hover:-translate-y-1 transition-transform duration-300 group border border-[#074293] cursor-pointer"
             >
               <div className="relative h-64 overflow-hidden">
                 <img 
@@ -71,7 +81,7 @@ const ServicesSection: React.FC = () => {
                 <h3 className="text-[#074293] mb-4 text-xl font-semibold">{service.title}</h3>
                 <p className="text-black-600 leading-relaxed">{service.description}</p>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>
@@ -80,6 +90,7 @@ const ServicesSection: React.FC = () => {
 };
 
 export default ServicesSection;
+
 
 
 

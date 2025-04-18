@@ -1,6 +1,6 @@
 
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface RoundedPillProps {
   activeDotIndex: number;
@@ -21,7 +21,7 @@ const RoundedPill: React.FC<RoundedPillProps> = ({
           onClick={() => onDotClick(index)}
           className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer
             ${index === activeDotIndex 
-              ? 'bg-[#074293] transform scale-110' 
+              ? 'bg-[#FF8E3C] transform scale-110' 
               : 'bg-white/50 hover:bg-white/70'}`
           }
           aria-label={`Slide ${index + 1}`}
@@ -55,6 +55,16 @@ const HeroSection = () => {
       image: "https://images.pexels.com/photos/2977547/pexels-photo-2977547.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80"
     }
   ];
+
+  useEffect(() => {
+    // Create an interval that changes slides every 4 seconds
+    const interval = setInterval(() => {
+      setActiveIndex((current) => (current === slides.length - 1 ? 0 : current + 1));
+    }, 4000); // 4000ms = 4 seconds
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(interval);
+  }, []); // Empty dependency array means this effect runs once on mount
 
   const handleDotClick = (index: number) => {
     setActiveIndex(index);
@@ -120,6 +130,8 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
+
 
 
 

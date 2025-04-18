@@ -1,11 +1,21 @@
 
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import CTASection from '../components/home/CTASection.tsx';
 import WorkingProcess from '../components/home/WorkingProcess.tsx';
-import PartnersSection from '../components/home/PartnersSection.tsx';
+import PartnersSection from '../components/home/PartnersSection';
 import FooterSection from '../components/home/FooterSection';
+import sishanImage from '../assets/images/sishan.jpg';
+import sapanaImage from '../assets/images/sapana.jpg';
 
 const Aboutus = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+  }, []);
+
   return (
     <div className="flex flex-col w-full">
       {/* Header Section */}
@@ -150,21 +160,60 @@ const Aboutus = () => {
             </div>
           </div>
         </div>
-      </div>
 
-      {/* CTA Section with adjusted spacing */}
-      <div className="mb-20">
-        <CTASection />
-      </div>
+        {/* Cards Section */}
+        <div className="mt-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            {/* Card 1 */}
+            <div className="space-y-4">
+              <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+                <div className="h-[400px] overflow-hidden border-4 border-[#FF8E3C]">
+                  <img 
+                    src={sishanImage} 
+                    alt="Team Member 1"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <div className="text-center">
+                <h3 className="text-xl font-bold text-[#074293]">Sishan Adhikari</h3>
+                <p className="text-[#FF8E3C] font-medium">Sr.Counselor</p>
+              </div>
+            </div>
 
-      {/* Working Process with adjusted spacing */}
-      <div className="mb-20">
-        <WorkingProcess />
-      </div>
+            {/* Card 2 */}
+            <div className="space-y-4">
+              <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+                <div className="h-[400px] overflow-hidden border-4 border-[#FF8E3C]">
+                  <img 
+                    src={sapanaImage} 
+                    alt="Team Member 2"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <div className="text-center">
+                <h3 className="text-xl font-bold text-[#074293]">Sapana Gadal</h3>
+                <p className="text-[#FF8E3C] font-medium">Jr.Counselor</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      {/* Partners Section */}
-      <div className="mb-10">
-        <PartnersSection />
+        {/* CTA Section with adjusted spacing */}
+        <div className="mb-20">
+          <CTASection />
+        </div>
+
+        {/* Working Process with adjusted spacing */}
+        <div className="mb-20">
+          <WorkingProcess />
+        </div>
+
+        {/* Partners Section */}
+        <div className="mb-10">
+          <PartnersSection />
+        </div>
       </div>
       <FooterSection />
     </div>
@@ -172,14 +221,6 @@ const Aboutus = () => {
 };
 
 export default Aboutus;
-
-
-
-
-
-
-
-
 
 
 

@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import FooterSection from "../../components/home/FooterSection";
-import { useState } from "react";
 
 interface BlogPost {
   date: string;
@@ -11,32 +11,48 @@ interface BlogPost {
 }
 
 const IeltsprepPage = () => {
+  const navigate = useNavigate();
   const [currentPage] = useState(0);
   const postsPerPage = 3;
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+  }, []);
+
   const recommendedPosts: BlogPost[] = [
     {
-      date: "5th Apr",
-      image: "https://images.pexels.com/photos/2422293/pexels-photo-2422293.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Top Universities in USA",
+      date: "15th Mar",
+      image: "https://images.pexels.com/photos/2422280/pexels-photo-2422280.jpeg?auto=compress&cs=tinysrgb&w=600",
+      title: "Guide to Study in Australia",
       description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-      path: "/blog/top-universities"
+      path: "/blog/guide-to-australia"
     },
     {
-      date: "10th Apr",
-      image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=600",
+      date: "3rd Apr",
+      image: "https://images.pexels.com/photos/2422278/pexels-photo-2422278.jpeg?auto=compress&cs=tinysrgb&w=600",
       title: "Free Online Courses",
       description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
       path: "/blog/free-courses"
     },
     {
-      date: "15th Mar",
-      image: "https://images.pexels.com/photos/2422280/pexels-photo-2422280.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Statement of Purpose Guide",
+      date: "21st Dec",
+      image: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600",
+      title: "Student Visa Guide",
       description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-      path: "/blog/sop"
+      path: "/blog/student-visa-guide"
     }
   ];
+
+  const handlePostClick = (path: string) => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+    navigate(path);
+  };
 
   
   const getCurrentPosts = () => {

@@ -1,7 +1,25 @@
-import { Link } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import FooterSection from '../components/home/FooterSection';
 
 const Services = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+  }, []);
+
+  const handleServiceClick = (link: string) => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+    navigate(link);
+  };
+
   const services = [
     {
       title: "Career Counseling",
@@ -73,10 +91,10 @@ const Services = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {services.map((service, index) => (
-            <Link 
-              to={service.link}
-              key={index} 
-              className="bg-white overflow-hidden shadow-md hover:-translate-y-1 transition-all duration-300 group border border-[#074293] "
+            <div
+              key={index}
+              onClick={() => handleServiceClick(service.link)}
+              className="bg-white overflow-hidden shadow-md hover:-translate-y-1 transition-all duration-300 group border border-[#074293] cursor-pointer"
             >
               <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
                 <img 
@@ -98,7 +116,7 @@ const Services = () => {
                   {service.desc}
                 </p>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
 
@@ -120,6 +138,7 @@ const Services = () => {
 };
 
 export default Services;
+
 
 
 

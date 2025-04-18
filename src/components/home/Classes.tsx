@@ -47,6 +47,10 @@ const OurClasses: React.FC = () => {
   const totalSlides = Math.ceil(testPrepClasses.length / 3);
 
   const handleClassClick = (path: string) => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
     navigate(path);
   };
 
@@ -125,6 +129,7 @@ const OurClasses: React.FC = () => {
 };
 
 export default OurClasses;
+
 
 
 
