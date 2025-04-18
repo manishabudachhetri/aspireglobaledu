@@ -46,13 +46,6 @@ const IeltsprepPage = () => {
     }
   ];
 
-  const handlePostClick = (path: string) => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'instant'
-    });
-    navigate(path);
-  };
 
   
   const getCurrentPosts = () => {

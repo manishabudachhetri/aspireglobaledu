@@ -60,10 +60,6 @@ const partners = [
   }
 ];
 
-interface Partner {
-  name: string;
-  logo: string;
-}
 
 const PartnersSection: FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

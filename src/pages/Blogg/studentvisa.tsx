@@ -1,17 +1,9 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import FooterSection from "../../components/home/FooterSection";
 
-interface BlogPost {
-  date: string;
-  image: string;
-  title: string;
-  description: string;
-  path: string;
-}
 
 const StudentvisaPage = () => {
-  const navigate = useNavigate();
   const [currentPage] = useState(0);
   const postsPerPage = 3;
 
@@ -22,13 +14,6 @@ const StudentvisaPage = () => {
     });
   }, []);
 
-  const handlePostClick = (path: string) => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'instant'
-    });
-    navigate(path);
-  };
 
   const recommendedPosts = [
     {

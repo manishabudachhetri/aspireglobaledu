@@ -1,4 +1,4 @@
-import React, { useState, FormEvent, useEffect } from 'react';
+import  { useState, FormEvent, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import FooterSection from '../../components/home/FooterSection';
 
@@ -53,7 +53,7 @@ const Australia: React.FC = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-  const [submitStatus, setSubmitStatus] = useState<{
+  const [, setSubmitStatus] = useState<{
     success?: string;
     error?: string;
   }>({});

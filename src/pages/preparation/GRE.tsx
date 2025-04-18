@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import FooterSection from '../../components/home/FooterSection';
+import { BsHourglassSplit } from 'react-icons/bs';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFileLines, faMoneyCheckDollar, faUsers } from '@fortawesome/free-solid-svg-icons';
 
 const GRE: React.FC = () => {
   useEffect(() => {
