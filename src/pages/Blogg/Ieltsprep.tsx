@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import FooterSection from "../../components/home/FooterSection";
 
 interface BlogPost {
@@ -11,7 +11,6 @@ interface BlogPost {
 }
 
 const IeltsprepPage = () => {
-  const navigate = useNavigate();
   const [currentPage] = useState(0);
   const postsPerPage = 3;
 
