@@ -118,7 +118,7 @@ const Dubai = () => {
             
             <img 
               src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=2000&auto=format&fit=crop&q=80" 
-              alt="Dubai University" 
+              alt="Dubai Uni" 
               className="w-full h-[400px] object-cover shadow-md"
             />
 
