@@ -10,10 +10,10 @@ const countries = [
     path: "/abroad-study/malta"
   },
   {
-    name: "UAE",
+    name: "Dubai",
     image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    label: "Study in UAE",
-    path: "/abroad-study/uae"
+    label: "Study in Dubai",
+    path: "/abroad-study/dubai"
   },
   {
     name: "UK",

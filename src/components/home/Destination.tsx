@@ -19,9 +19,9 @@ const Destination: React.FC = () => {
       path: "/abroad-study/malta"
     },
     {
-      country: "UAE",
+      country: "Dubai",
       image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-      path: "/abroad-study/uae"
+      path: "/abroad-study/dubai"
     },
     {
       country: "UK",

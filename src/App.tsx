@@ -42,7 +42,7 @@ import IELTS from './pages/preparation/IELTS';
 
 // Country specific pages
 import Malta from './pages/AbroadStudy/Malta';
-import UAE from './pages/AbroadStudy/UAE';
+import Dubai from './pages/AbroadStudy/Dubai';
 import UK from './pages/AbroadStudy/UK';
 import Australia from './pages/AbroadStudy/Australia';
 
@@ -108,7 +108,7 @@ function App() {
 
             {/* Study Abroad Routes */}
             <Route path="/abroad-study/malta" element={<Malta />} />
-            <Route path="/abroad-study/uae" element={<UAE />} />
+            <Route path="/abroad-study/dubai" element={<Dubai />} />
             <Route path="/abroad-study/uk" element={<UK />} />
             <Route path="/abroad-study/australia" element={<Australia />} />
 

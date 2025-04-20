@@ -9,10 +9,12 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  assetsInclude: ['**/*.jpg'],
   server: {
     port: 5173,
     host: true,
     open: true,
   },
 });
+
 

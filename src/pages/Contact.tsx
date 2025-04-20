@@ -7,17 +7,21 @@ export default function Contact() {
     { 
       icon: 'phone',
       title: 'Phone',
-      text: '+977-123456789, 01-4106705'
+      text: '+977-9802374773',
+      link: 'tel:+9779802374773',
+     
     },
     {
       icon: 'email',
       title: 'Mail Info',
-      text: 'info@aspireglobal.education'
+      text: 'info@aspireglobal.education',
+      link: 'mailto:info@aspireglobal.education'
     },
     {
       icon: 'location',
       title: 'Address',
-      text: 'Kalimati Chowk, Kathmandu, Nepal'
+      text: 'Kalimati Chowk, Kathmandu, Nepal',
+      link: 'https://maps.google.com/?q=Kalimati+Chowk,+Kathmandu,+Nepal'
     }
   ];
 
@@ -60,7 +64,7 @@ export default function Contact() {
                 <h3 className="text-xl font-semibold mb-4">Contact Details</h3>
                 <div className="space-y-4">
                   {contactInfo.map((info) => (
-                    <div key={info.icon} className="flex items-start">
+                    <div key={info.title} className="flex items-start">
                       <div className="mr-3 mt-1">
                         {info.icon === 'phone' && (
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -81,7 +85,25 @@ export default function Contact() {
                       </div>
                       <div>
                         <h4 className="font-bold">{info.title}</h4>
-                        <p className="text-white/80">{info.text}</p>
+                        <div className="flex flex-col">
+                          <a 
+                            href={info.link}
+                            target={info.icon === 'location' ? '_blank' : '_self'}
+                            rel={info.icon === 'location' ? 'noopener noreferrer' : ''}
+                            className="text-white/80 hover:text-white transition-duration-300"
+                          >
+                            {info.text}
+                          </a>
+                          {info.additionalNumbers && info.additionalNumbers.map((number, index) => (
+                            <a 
+                              key={index}
+                              href={number.link}
+                              className="text-white/80 hover:text-white transition-duration-300 ml-8"
+                            >
+                              {number.text}
+                            </a>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -187,6 +209,8 @@ export default function Contact() {
     </div>
   );
 }
+
+
 
 
 
