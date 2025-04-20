@@ -1,16 +1,21 @@
 import { useState, useEffect } from 'react';
 import { RiMenu2Line } from 'react-icons/ri';
+import { useNavigate } from 'react-router-dom';
 import logoImage from '../../assets/images/aspirelogo.jpeg';
 import StudyAbroadSidebar from '../studyabroad/StudyAbroadSidebar';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const navigate = useNavigate();
 
-  // Handle page refresh on navigation
+  // Handle page navigation
   const handleNavigation = (path: string) => {
-    // Always refresh, even if it's the same path
-    window.location.href = path;
+    navigate(path);
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
   };
 
   // Handle back/forward browser buttons
@@ -166,6 +171,7 @@ const Header = () => {
 };
 
 export default Header;
+
 
 
 
