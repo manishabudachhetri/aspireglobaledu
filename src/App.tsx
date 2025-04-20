@@ -1,5 +1,6 @@
 
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import Header from './components/home/Header';
 // Home components
 import HeroSection from './components/home/HeroSection';
@@ -60,6 +61,7 @@ import Studentvisa from './pages/Blogg/studentvisa';
 function App() {
   return (
     <Router basename="/">
+      <ScrollToTop />
       <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow">
@@ -138,6 +140,7 @@ function App() {
 }
 
 export default App;
+
 
 
 

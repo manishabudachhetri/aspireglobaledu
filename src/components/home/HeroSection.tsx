@@ -72,7 +72,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative h-screen" id="home">
+    <section className="relative h-[110vh]" id="home"> {/* Changed from h-[120vh] to h-[110vh] */}
       {/* Background Image with Transition */}
       <div className="absolute inset-0 w-full h-full overflow-hidden flex items-center justify-center">
         {slides.map((slide, index) => (
@@ -80,23 +80,27 @@ const HeroSection = () => {
             key={index}
             src={slide.image}
             alt={slide.title}
-            className={`absolute transition-opacity duration-1000 w-full h-full
+            className={`absolute transition-opacity duration-1000
               ${index === activeIndex ? 'opacity-100' : 'opacity-0'}`}
             loading={index === 0 ? "eager" : "lazy"}
             fetchPriority={index === 0 ? "high" : "low"}
-            style={{
-              imageRendering: "auto",
-              WebkitBackfaceVisibility: "hidden",
-              backfaceVisibility: "hidden",
-              filter: "brightness(0.95) contrast(1.02) saturate(1.05)",
-              objectPosition: index === 0 ? "center 65%" : "center center",
-              objectFit: index === 0 ? "contain" : "cover",
-              backgroundColor: index === 0 ? "#000000" : "transparent",
-              padding: index === 0 ? "20px" : "0",
-              marginTop: index === 0 ? "140px" : "0", // Increased margin top more
-              transform: index === 0 ? "scale(0.7)" : "none", // Reduced scale further
-              maxWidth: index === 0 ? "250%" : "100%", // Increased maxWidth more
-              width: index === 0 ? "250%" : "100%", // Increased width more
+            style={index === 0 ? {
+              position: 'absolute',
+              width: '100%',
+              height: '120%',
+              objectFit: 'contain',
+              objectPosition: 'center 70%',
+              backgroundColor: "#074293",
+              top: '50%', // Changed from 48% to 50% to move down more
+              left: '50%',
+              transform: 'translate(-50%, -50%) scale(1.1)',
+              padding: '20px',
+            } : {
+              position: 'absolute',
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center center',
             }}
           />
         ))}
@@ -107,8 +111,7 @@ const HeroSection = () => {
       <div className="relative h-full pt-20 pb-12 px-4 md:px-0">
         <div className="container mx-auto h-full flex items-center">
           {/* Text Content with Transition */}
-          <div className={`flex-1 max-w-2xl space-y-6 text-white relative z-10 ml-16
-            ${activeIndex === 0 ? 'opacity-0' : 'opacity-100'}`}>
+          <div className="flex-1 max-w-2xl space-y-6 text-white relative z-10 ml-16">
             {slides.map((slide, index) => (
               <div
                 key={index}
@@ -143,10 +146,6 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-
-
-
-
 
 
 
