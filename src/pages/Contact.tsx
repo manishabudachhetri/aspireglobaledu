@@ -94,7 +94,7 @@ export default function Contact() {
                           >
                             {info.text}
                           </a>
-                          {info.additionalNumbers && info.additionalNumbers.map((number, index) => (
+                          {(info as { additionalNumbers?: Array<{ link: string; text: string }> }).additionalNumbers?.map((number: { link: string; text: string }, index: number) => (
                             <a 
                               key={index}
                               href={number.link}
@@ -209,6 +209,7 @@ export default function Contact() {
     </div>
   );
 }
+
 
 
 
