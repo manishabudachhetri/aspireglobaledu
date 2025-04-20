@@ -91,7 +91,7 @@ const HeroSection = () => {
               objectFit: 'contain',
               objectPosition: 'center 70%',
               backgroundColor: "#074293",
-              top: '50%', // Changed from 48% to 50% to move down more
+              top: '53%', // Changed from 48% to 50% to move down more
               left: '50%',
               transform: 'translate(-50%, -50%) scale(1.1)',
               padding: '20px',
