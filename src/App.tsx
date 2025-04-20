@@ -15,7 +15,7 @@ import PartnersSection from './components/home/PartnersSection';
 import FooterSection from './components/home/FooterSection';
 
 // Pages
-import About from './pages/Aboutus';
+import Aboutus from './pages/Aboutus';
 import Services from './pages/Services';
 import PreparationClass from './pages/PreparationClass';
 import Contact from './pages/Contact';
@@ -59,7 +59,7 @@ import Studentvisa from './pages/Blogg/studentvisa';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/">
       <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow">
@@ -82,7 +82,7 @@ function App() {
             
             {/* Main Routes */}
             <Route path="/abroad-study" element={<AbroadStudy />} />
-            <Route path="/about" element={<About />} index />
+            <Route path="/aboutus" element={<Aboutus />} />
             <Route path="/services" element={<Services />} />
             <Route path="/preparation class" element={<PreparationClass />} />
             <Route path="/contact" element={<Contact />} />
@@ -138,6 +138,8 @@ function App() {
 }
 
 export default App;
+
+
 
 
 

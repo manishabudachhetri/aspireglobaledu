@@ -111,7 +111,7 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
             <button onClick={() => handleNavigation("/")} className="text-gray-800 hover:text-[#074293] font-bold">Home</button>
-            <button onClick={() => handleNavigation("/about")} className="text-gray-800 hover:text-[#074293] font-bold">About Us</button>
+            <button onClick={() => handleNavigation("/aboutus")} className="text-gray-800 hover:text-[#074293] font-bold">About Us</button>
             <button onClick={() => handleNavigation("/services")} className="text-gray-800 hover:text-[#074293] font-bold">Services</button>
             <button onClick={() => handleNavigation("/preparation class")} className="text-gray-800 hover:text-[#074293] font-bold">Preparation Class</button>
             <button onClick={() => handleNavigation("/blog")} className="text-gray-800 hover:text-[#074293] font-bold">Blog</button>
@@ -150,7 +150,7 @@ const Header = () => {
           <div className="md:hidden bg-white absolute w-full shadow-md">
             <nav className="flex flex-col p-4">
               <button onClick={() => { handleNavigation("/"); setIsMenuOpen(false); }} className="py-2 text-left text-gray-800 hover:text-[#074293] font-bold">Home</button>
-              <button onClick={() => { handleNavigation("/about"); setIsMenuOpen(false); }} className="py-2 text-left text-gray-800 hover:text-[#074293] font-bold">About Us</button>
+              <button onClick={() => { handleNavigation("/aboutus"); setIsMenuOpen(false); }} className="py-2 text-left text-gray-800 hover:text-[#074293] font-bold">About Us</button>
               <button onClick={() => { handleNavigation("/services"); setIsMenuOpen(false); }} className="py-2 text-left text-gray-800 hover:text-[#074293] font-bold">Services</button>
               <button onClick={() => { handleNavigation("/preparation class"); setIsMenuOpen(false); }} className="py-2 text-left text-gray-800 hover:text-[#074293] font-bold">Preparation Class</button>
               <button onClick={() => { handleNavigation("/blog"); setIsMenuOpen(false); }} className="py-2 text-left text-gray-800 hover:text-[#074293] font-bold">Blog</button>
