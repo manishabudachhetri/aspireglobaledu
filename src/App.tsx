@@ -1,5 +1,5 @@
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Header from './components/home/Header';
 // Home components
 import HeroSection from './components/home/HeroSection';
@@ -82,7 +82,7 @@ function App() {
             
             {/* Main Routes */}
             <Route path="/abroad-study" element={<AbroadStudy />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/about" element={<About />} index />
             <Route path="/services" element={<Services />} />
             <Route path="/preparation class" element={<PreparationClass />} />
             <Route path="/contact" element={<Contact />} />
@@ -122,6 +122,14 @@ function App() {
             <Route path="/blog/top-universities-usa" element={<TopUni />} />
             <Route path="/blog/how-to-write-sop" element={<SOP />} />
             <Route path="/blog/student-visa-guide" element={<Studentvisa />} />
+            <Route path="*" element={
+              <div className="flex flex-col items-center justify-center min-h-screen">
+                <h1 className="text-4xl font-bold text-[#074293]">404: Page Not Found</h1>
+                <Link to="/" className="mt-4 text-[#FF8E3C] hover:underline">
+                  Return to Home
+                </Link>
+              </div>
+            } />
           </Routes>
         </main>
       </div>
@@ -130,6 +138,8 @@ function App() {
 }
 
 export default App;
+
+
 
 
 

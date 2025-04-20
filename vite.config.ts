@@ -15,6 +15,14 @@ export default defineConfig({
     host: true,
     open: true,
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
+  },
 });
+
 
 

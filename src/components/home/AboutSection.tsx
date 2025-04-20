@@ -6,12 +6,11 @@ const AboutSection = () => {
   const navigate = useNavigate();
 
   const handleReadMore = () => {
-    // Navigate and force scroll to top
     window.scrollTo({
       top: 0,
       behavior: 'instant'
     });
-    navigate('/about');
+    navigate('/about'); // Make sure this matches exactly with the route path
   };
 
   return (
@@ -50,6 +49,7 @@ const AboutSection = () => {
 };
 
 export default AboutSection;
+
 
 
 
