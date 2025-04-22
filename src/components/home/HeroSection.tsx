@@ -1,7 +1,7 @@
 
 
 import { useState, useEffect } from "react";
-import WebsiteBanner from "../../assets/images/WebsiteBanner.jpg";
+import WebsiteBanner from "../../assets/images/Websiteban.jpg";
 
 interface RoundedPillProps {
   activeDotIndex: number;
