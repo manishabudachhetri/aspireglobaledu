@@ -1,11 +1,56 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FooterSection from "../../components/home/FooterSection";
 
+interface BlogPost {
+  date: string;
+  image: string;
+  title: string;
+  description: string;
+  path: string;
+}
 
 const StudentvisaPage = () => {
+  const navigate = useNavigate();
   const [currentPage] = useState(0);
   const postsPerPage = 3;
+
+  const recommendedPosts: BlogPost[] = [
+    {
+      date: "10th Apr",
+      image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=600",
+      title: "Free Online Courses",
+      description: "Discover valuable free online courses to enhance your skills and knowledge in various fields.",
+      path: "/blog/free-courses"
+    },
+    {
+      date: "12th Feb",
+      image: "https://images.pexels.com/photos/3184394/pexels-photo-3184394.jpeg?auto=compress&cs=tinysrgb&w=600",
+      title: "Guide to Study in Australia 2024",
+      description: "Everything you need to know about studying in Australia: university options, admission requirements, and more.",
+      path: "/blog/guide-to-australia"
+    },
+    {
+      date: "21st Dec",
+      image: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600",
+      title: "IELTS Preparation Tips and Tricks",
+      description: "Master the IELTS exam with our expert strategies. Get practical tips for all four sections: Reading, Writing, Listening, and Speaking.",
+      path: "/blog/ielts-preparation"
+    }
+  ];
+
+  const handlePostClick = (path: string) => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+    navigate(path);
+  };
+
+  const getCurrentPosts = () => {
+    const startIndex = currentPage * postsPerPage;
+    return recommendedPosts.slice(startIndex, startIndex + postsPerPage);
+  };
 
   useEffect(() => {
     window.scrollTo({
@@ -15,35 +60,6 @@ const StudentvisaPage = () => {
   }, []);
 
 
-  const recommendedPosts = [
-    {
-      date: "21th Dec",
-      image: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "IELTS Preparation Tips and Tricks",
-      description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-      path: "/blog/ielts-preparation"
-    },
-    {
-      date: "12th Feb",
-      image: "https://images.pexels.com/photos/3184394/pexels-photo-3184394.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Guide to Study in Australia 2024",
-      description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-      path: "/blog/guide-to-australia"
-    },
-    {
-      date: "7th Jun",
-      image: "https://images.pexels.com/photos/2422290/pexels-photo-2422290.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "How to Write a Winning SOP",
-      description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-      path: "/blog/how-to-write-sop"
-    }
-  ];
-
-  
-  const getCurrentPosts = () => {
-    const startIndex = currentPage * postsPerPage;
-    return recommendedPosts.slice(startIndex, startIndex + postsPerPage);
-  };
 
   return (
     <div className="flex flex-col w-full">
@@ -84,19 +100,36 @@ const StudentvisaPage = () => {
         
           <div className="w-full max-w-[95%]">
             <p className="mb-4 text-justify">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet,
+              Obtaining a student visa is a crucial step in pursuing international education. The process requires careful planning, attention to detail, and thorough preparation of documentation. Understanding the requirements and following the correct procedures can significantly improve your chances of a successful visa application.
             </p>
-           
+            <p className="mb-4 text-justify">
+              The first step in the student visa process is securing admission from an accredited educational institution. Once you receive your acceptance letter, the institution will issue the necessary documentation (such as I-20 for US, CAS for UK) required for your visa application. This document confirms your enrollment and provides important details about your course of study.
+            </p>
 
             {/* Highlight Box */}
             <div className="bg-blue-100 border-l-4 border-[#074293] text-[#333333] p-4 my-6 ml-8">
               <p className="font-semibold text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing
+                Key requirements for student visa applications typically include proof of acceptance from an educational institution, evidence of sufficient financial resources to cover tuition and living expenses, proof of English language proficiency, valid passport, passport-sized photographs, and completed visa application forms. Additional requirements may include medical examinations, police clearance certificates, and proof of intent to return to your home country after completing your studies.
               </p>
             </div>
 
+            <h3 className="text-xl font-semibold text-[#074293] mb-3 mt-6">Financial Documentation</h3>
             <p className="text-justify">
-             Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.L
+              One of the most critical aspects of your visa application is demonstrating sufficient financial resources. This typically involves providing bank statements, scholarship letters, or sponsorship documents showing you can cover your tuition fees and living expenses. The required amount varies by country and duration of study.
+            </p>
+
+            <h3 className="text-xl font-semibold text-[#074293] mb-3 mt-6">Visa Interview Preparation</h3>
+            <p className="mb-4 text-justify">
+              Many countries require a visa interview as part of the application process. During the interview, you should be prepared to discuss your study plans, chosen institution, financial arrangements, and post-study intentions. Clear, confident, and honest responses are essential. It's important to demonstrate strong ties to your home country and a genuine intention to return after completing your studies.
+            </p>
+
+            <h3 className="text-xl font-semibold text-[#074293] mb-3 mt-6">Common Visa Processing Times</h3>
+            <p className="mb-4 text-justify">
+              Visa processing times vary by country and season. Generally, it's recommended to begin the visa application process at least 3-4 months before your intended start date. Some countries offer priority processing services for an additional fee. Remember that during peak seasons (especially summer months), processing times may be longer.
+            </p>
+
+            <p className="mb-4 text-justify">
+              After receiving your visa, familiarize yourself with its conditions, including work restrictions, reporting requirements, and validity period. Understanding and complying with these conditions is crucial for maintaining your legal status as an international student.
             </p>
           </div>
         </div>
@@ -112,7 +145,15 @@ const StudentvisaPage = () => {
             {getCurrentPosts().map((post, index) => (
               <div
                 key={index}
-                className="bg-white overflow-hidden shadow-md text-left relative h-[420px] max-w-[350px] mx-auto w-full"
+                className="bg-white overflow-hidden shadow-md text-left relative h-[420px] max-w-[350px] mx-auto w-full cursor-pointer hover:shadow-xl transition-all duration-300"
+                onClick={() => handlePostClick(post.path)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    handlePostClick(post.path);
+                  }
+                }}
               >
                 <div className="h-48 overflow-hidden">
                   <img 

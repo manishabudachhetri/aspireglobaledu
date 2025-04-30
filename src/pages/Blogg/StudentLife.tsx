@@ -1,40 +1,63 @@
-import { Link } from "react-router-dom";
-import FooterSection from "../../components/home/FooterSection";
-import { useState } from "react";
+import { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import FooterSection from '../../components/home/FooterSection';
+
+interface BlogPost {
+  date: string;
+  image: string;
+  title: string;
+  description: string;
+  path: string;
+}
 
 const StudentLifePage = () => {
+  const navigate = useNavigate();
   const [currentPage] = useState(0);
   const postsPerPage = 3;
 
-  const recommendedPosts = [
-    {
-      date: "15th Mar",
-      image: "https://images.pexels.com/photos/2422280/pexels-photo-2422280.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Scholarship Opportunities in Canada",
-      description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-      path: "/blog/scholarship-canada"
-    },
+  const recommendedPosts: BlogPost[] = [
     {
       date: "5th Apr",
       image: "https://images.pexels.com/photos/2422293/pexels-photo-2422293.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Top Universities in USA",
-      description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-      path: "/blog/top-universities-usa"
+      title: "Top Universities in the Australia",
+      description: "Discover the prestigious universities in the USA, their unique offerings, and what makes them global education leaders.",
+      path: "/blog/top-universities-australia"
     },
     {
-      date: "21th Dec",
-      image: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "IELTS Preparation Tips and Tricks",
-      description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-      path: "/blog/ielts-preparation"
+      date: "7th Jun",
+      image: "https://images.pexels.com/photos/2422290/pexels-photo-2422290.jpeg?auto=compress&cs=tinysrgb&w=600",
+      title: "How to Write a Winning SOP",
+      description: "Learn the essential tips and strategies for crafting a compelling Statement of Purpose that stands out in your university applications.",
+      path: "/blog/how-to-write-sop"
+    },
+    {
+      date: "12th May",
+      image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600",
+      title: "Career Opportunities Abroad",
+      description: "Explore exciting career prospects and job opportunities for international students in global markets.",
+      path: "/blog/career-opportunities"
     }
   ];
 
-  
+  const handlePostClick = (path: string) => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+    navigate(path);
+  };
+
   const getCurrentPosts = () => {
     const startIndex = currentPage * postsPerPage;
     return recommendedPosts.slice(startIndex, startIndex + postsPerPage);
   };
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+  }, []);
 
   return (
     <div className="flex flex-col w-full">
@@ -75,19 +98,29 @@ const StudentLifePage = () => {
         
           <div className="w-full max-w-[95%]">
             <p className="mb-4 text-justify">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet,
+              Student life in the United Kingdom offers a unique blend of academic excellence, cultural diversity, and personal growth opportunities. From historic universities to modern institutions, the UK education system provides students with world-class facilities, expert guidance, and a supportive learning environment that fosters both academic and personal development.
             </p>
-           
+            <p className="mb-4 text-justify">
+              Accommodation options in the UK vary from university halls of residence to private housing. First-year students often choose university accommodation, which helps them integrate into campus life and build lasting friendships. These residences typically offer various room types, from shared facilities to en-suite rooms, catering to different preferences and budgets. Private housing becomes a popular choice in subsequent years, offering greater independence and often more affordable options.
+            </p>
 
             {/* Highlight Box */}
             <div className="bg-blue-100 border-l-4 border-[#074293] text-[#333333] p-4 my-6 ml-8">
               <p className="font-semibold text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing
+                The UK academic system emphasizes independent learning and critical thinking. Students typically attend lectures, seminars, and tutorials, with considerable time dedicated to self-study and research. The assessment methods include essays, presentations, group projects, and examinations. Time management and organizational skills are crucial for balancing academic responsibilities with social activities and possibly part-time work.
               </p>
             </div>
 
             <p className="text-justify">
-             Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.L
+              Student societies and clubs form an integral part of UK university life. These organizations cover diverse interests from academic and professional development to sports, arts, and cultural activities. Participating in these extracurricular activities not only enriches the university experience but also helps develop valuable soft skills and expand social networks.
+            </p>
+
+            <p className="mb-4 text-justify">
+              Part-time work opportunities are available for international students (up to 20 hours per week during term time), helping with living expenses while gaining valuable work experience. Many universities have career services that assist with job searches, CV preparation, and interview skills. The UK's multicultural environment also provides excellent networking opportunities and exposure to diverse perspectives.
+            </p>
+
+            <p className="mb-4 text-justify">
+              Healthcare in the UK is accessible through the National Health Service (NHS), with international students paying an Immigration Health Surcharge as part of their visa application. Universities also provide additional support services, including counseling, academic guidance, and international student support offices to help with various aspects of student life.
             </p>
           </div>
         </div>
@@ -103,7 +136,15 @@ const StudentLifePage = () => {
             {getCurrentPosts().map((post, index) => (
               <div
                 key={index}
-                className="bg-white overflow-hidden shadow-md text-left relative h-[420px] max-w-[350px] mx-auto w-full"
+                className="bg-white overflow-hidden shadow-md text-left relative h-[420px] max-w-[350px] mx-auto w-full cursor-pointer hover:shadow-xl transition-all duration-300"
+                onClick={() => handlePostClick(post.path)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    handlePostClick(post.path);
+                  }
+                }}
               >
                 <div className="h-48 overflow-hidden">
                   <img 

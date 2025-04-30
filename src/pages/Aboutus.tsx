@@ -90,9 +90,9 @@ const Aboutus = () => {
           {/* CEO Section */}
           <div className="grid md:grid-cols-5 gap-0">
             <div className="md:col-span-2 bg-white shadow-lg overflow-hidden">
-              <div className="h-[800px] w-full relative">
+              <div className="h-[800px] md:h-[800px] w-full relative">
                 <div className="absolute inset-0 flex items-center justify-center bg-[#f8faff] p-4">
-                  <div className="w-[500px] h-[700px] overflow-hidden"> {/* Increased height from 500px to 700px */}
+                  <div className="w-full md:w-[500px] h-[700px] overflow-hidden">
                     <img 
                       src={ceoImage}
                       alt="CEO"
@@ -103,57 +103,60 @@ const Aboutus = () => {
               </div>
             </div>
             <div className="md:col-span-3 bg-[#edf4ff] shadow-lg overflow-hidden">
-              <div className="px-16 pt-4 pb-8 flex flex-col justify-between h-[800px]">
+              <div className="px-4 md:px-16 pt-4 pb-8 flex flex-col justify-between h-auto md:h-[800px]">
                 <div>
-                  <h3 className="text-3xl font-bold text-[#074293] mb-3">Message from CEO</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold text-[#074293] mb-3">Message from CEO</h3>
                   <div className="space-y-2 text-black text-justify">
-                    <p className="text-lg leading-relaxed">
+                    <p className="text-base md:text-lg leading-relaxed">
                       As the founder and CEO of Aspire Global Education, I would like to take a moment to share our vision and commitment to empowering students as they embark on their journeys toward higher education. What began as a vision to provide expert guidance for students seeking to study abroad has grown into a global initiative built on trust, personalized support, and a commitment to long-term success.
                     </p>
-                    <p className="text-lg leading-relaxed">
+                    <p className="text-base md:text-lg leading-relaxed">
                       However, the complex processes of admissions, financial planning, and visa applications can be overwhelming. That's why our mission is to make these pathways smoother by offering tailored guidance that empowers students to make informed decisions about their futures.
                     </p>
-                    <p className="text-lg leading-relaxed">
+                    <p className="text-base md:text-lg leading-relaxed">
                       We believe that every student deserves genuine and realistic solutions tailored to their unique aspirations. By focusing on personalized experiences, we pave the way for our students to gain invaluable knowledge and cultural experiences that will shape their futures.
                     </p>
-                    <p className="text-lg leading-relaxed">
+                    <p className="text-base md:text-lg leading-relaxed">
                       Together, let us inspire and empower these aspiring individuals to achieve their educational goals and unlock endless opportunities.
                     </p>
-                    <p className="text-lg leading-relaxed mb-0"> {/* Removed bottom margin */}
+                    <p className="text-base md:text-lg leading-relaxed mb-4">
                       Warm regards,
                     </p>
                   </div>
                 </div>
-                <div className="pt-1"> {/* Reduced padding top */}
-                  <p className="font-bold text-[#074293] text-xl">Chapendra Baral</p> {/* Changed from text-2xl to text-xl */}
-                  <p className="text-base font-bold text-black">Chief Executive Officer</p>
-                  <p className="text-base text-black">Aspire Global Education</p>
+                <div className="mt-4 md:mt-0">
+                  <p className="font-bold text-[#074293] text-lg md:text-xl">Chapendra Baral</p>
+                  <p className="text-sm md:text-base font-bold text-black">Chief Executive Officer</p>
+                  <p className="text-sm md:text-base text-black">Aspire Global Education</p>
                 </div>
               </div>
             </div>
           </div>
 
+          {/* Add margin between sections */}
+          <div className="my-8 md:my-12"></div>
+
           {/* MD Section */}
           <div className="grid md:grid-cols-5 gap-0">
             <div className="md:col-span-3 bg-[#edf4ff] shadow-lg overflow-hidden">
-              <div className="px-16 pt-4 pb-8 flex flex-col h-[600px]">
-                <div className="mt-16">
-                  <h3 className="text-3xl font-bold text-[#074293] mb-3">Message from MD</h3>
+              <div className="px-4 md:px-16 pt-4 pb-8 flex flex-col h-auto md:h-[600px]">
+                <div className="mt-8 md:mt-16">
+                  <h3 className="text-2xl md:text-3xl font-bold text-[#074293] mb-3">Message from MD</h3>
                   <div className="space-y-2 text-black text-justify">
-                    <p className="text-lg leading-relaxed">
+                    <p className="text-base md:text-lg leading-relaxed">
                       At Aspire Global Education, our mission is simple - to empower students with the guidance and support they need to achieve their dreams of studying abroad. As Managing Director, I take pride in leading a team that prioritizes trust, personalized advice, and long-term student success.
                     </p>
-                    <p className="text-lg leading-relaxed">
+                    <p className="text-base md:text-lg leading-relaxed">
                       We understand that the journey to international education can be complex. That's why we offer tailored solutions, helping students make informed decisions with confidence and clarity.
                     </p>
-                    <p className="text-lg leading-relaxed">
+                    <p className="text-base md:text-lg leading-relaxed">
                       Together, we're not just shaping academic paths, we're helping build brighter futures.
                     </p>
-                    <div className="space-y-0 mt-8">
-                      <p className="text-lg leading-relaxed mb-0">Warm regards,</p>
-                      <p className="font-bold text-[#074293] text-xl mt-0">Bishal Chapagain</p>
-                      <p className="text-base font-bold text-black">Managing Director</p>
-                      <p className="text-base text-black">Aspire Global Education</p>
+                    <div className="space-y-1 mt-4 md:mt-8">
+                      <p className="text-base md:text-lg leading-relaxed mb-2">Warm regards,</p>
+                      <p className="font-bold text-[#074293] text-lg md:text-xl">Bishal Chapagain</p>
+                      <p className="text-sm md:text-base font-bold text-black">Managing Director</p>
+                      <p className="text-sm md:text-base text-black">Aspire Global Education</p>
                     </div>
                   </div>
                 </div>
@@ -162,7 +165,7 @@ const Aboutus = () => {
             <div className="md:col-span-2 bg-white shadow-lg overflow-hidden">
               <div className="h-[600px] w-full relative">
                 <div className="absolute inset-0 flex items-center justify-center bg-[#f8faff] p-4">
-                  <div className="w-[500px] h-[500px] overflow-hidden">
+                  <div className="w-full md:w-[500px] h-[500px] overflow-hidden">
                     <img 
                       src={mdImage}
                       alt="MD"
@@ -346,6 +349,8 @@ const Aboutus = () => {
 };
 
 export default Aboutus;
+
+
 
 
 

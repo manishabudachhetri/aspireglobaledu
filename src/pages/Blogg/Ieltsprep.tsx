@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FooterSection from "../../components/home/FooterSection";
 
 interface BlogPost {
@@ -11,8 +11,46 @@ interface BlogPost {
 }
 
 const IeltsprepPage = () => {
+  const navigate = useNavigate();
   const [currentPage] = useState(0);
   const postsPerPage = 3;
+
+  const recommendedPosts: BlogPost[] = [
+    {
+      date: "15th Mar",
+      image: "https://images.pexels.com/photos/2422280/pexels-photo-2422280.jpeg?auto=compress&cs=tinysrgb&w=600",
+      title: "Scholarship Opportunities in Dubai",
+      description: "Explore lucrative scholarship opportunities in Dubai's top universities. Learn about eligibility criteria and application processes.",
+      path: "/blog/scholarship-dubai"
+    },
+    {
+      date: "3rd Apr",
+      image: "https://images.pexels.com/photos/2422278/pexels-photo-2422278.jpeg?auto=compress&cs=tinysrgb&w=600",
+      title: "Student Life in the UK",
+      description: "Experience the vibrant student life in the UK: from campus activities to city exploration. Get insights on accommodation and social life.",
+      path: "/blog/student-life-uk"
+    },
+    {
+      date: "21st Dec",
+      image: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600",
+      title: "Top Universities in the Australia",
+      description: "Discover the world's leading universities, their rankings, specializations, and what makes them stand out in global education.",
+      path: "/blog/top-universities-australia"
+    }
+  ];
+
+  const handlePostClick = (path: string) => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+    navigate(path);
+  };
+
+  const getCurrentPosts = () => {
+    const startIndex = currentPage * postsPerPage;
+    return recommendedPosts.slice(startIndex, startIndex + postsPerPage);
+  };
 
   useEffect(() => {
     window.scrollTo({
@@ -20,37 +58,6 @@ const IeltsprepPage = () => {
       behavior: 'instant'
     });
   }, []);
-
-  const recommendedPosts: BlogPost[] = [
-    {
-      date: "15th Mar",
-      image: "https://images.pexels.com/photos/2422280/pexels-photo-2422280.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Guide to Study in Australia",
-      description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-      path: "/blog/guide-to-australia"
-    },
-    {
-      date: "3rd Apr",
-      image: "https://images.pexels.com/photos/2422278/pexels-photo-2422278.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Free Online Courses",
-      description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-      path: "/blog/free-courses"
-    },
-    {
-      date: "21st Dec",
-      image: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Student Visa Guide",
-      description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-      path: "/blog/student-visa-guide"
-    }
-  ];
-
-
-  
-  const getCurrentPosts = () => {
-    const startIndex = currentPage * postsPerPage;
-    return recommendedPosts.slice(startIndex, startIndex + postsPerPage);
-  };
 
   return (
     <div className="flex flex-col w-full">
@@ -91,19 +98,25 @@ const IeltsprepPage = () => {
         
           <div className="w-full max-w-[95%]">
             <p className="mb-4 text-justify">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet,
+              The International English Language Testing System (IELTS) is a crucial gateway for international education and global opportunities. As one of the world's most recognized English proficiency tests, IELTS evaluates your ability to listen, read, write, and speak in English. Whether you're planning to study abroad, migrate, or advance your career, achieving a good IELTS score is often a key requirement.
             </p>
-           
+            <p className="mb-4 text-justify">
+              Success in IELTS requires a strategic approach and thorough preparation. The test consists of four modules: Listening (40 minutes), Reading (60 minutes), Writing (60 minutes), and Speaking (11-14 minutes). Each module requires specific skills and techniques, and understanding the test format and requirements is crucial for achieving your target band score.
+            </p>
 
             {/* Highlight Box */}
             <div className="bg-blue-100 border-l-4 border-[#074293] text-[#333333] p-4 my-6 ml-8">
               <p className="font-semibold text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing
+                Essential IELTS preparation strategies include regular practice with authentic test materials, developing strong time management skills, and understanding the scoring criteria for each module. Focus on expanding your vocabulary, improving your grammar, and enhancing your listening skills through regular exposure to English media. For the Speaking and Writing modules, practicing with structured responses and receiving expert feedback is crucial for improvement.
               </p>
             </div>
 
             <p className="text-justify">
-             Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.L
+              For the Listening module, practice with different accents and note-taking techniques. In Reading, develop skimming and scanning skills to manage time effectively. The Writing module requires familiarity with various task types and the ability to structure coherent responses. Speaking success depends on fluency, pronunciation, and the ability to express ideas clearly and confidently.
+            </p>
+
+            <p className="mb-4 text-justify">
+              Common mistakes to avoid include spending too much time on difficult questions, using memorized responses in Speaking and Writing tasks, and neglecting to read questions carefully. Regular mock tests under timed conditions, combined with targeted practice in weaker areas, can significantly improve your performance. Remember, IELTS evaluates your practical English skills, so immerse yourself in English through daily activities like reading news, watching documentaries, and engaging in conversations.
             </p>
           </div>
         </div>
@@ -119,7 +132,15 @@ const IeltsprepPage = () => {
             {getCurrentPosts().map((post, index) => (
               <div
                 key={index}
-                className="bg-white overflow-hidden shadow-md text-left relative h-[420px] max-w-[350px] mx-auto w-full"
+                className="bg-white overflow-hidden shadow-md text-left relative h-[420px] max-w-[350px] mx-auto w-full cursor-pointer hover:shadow-xl transition-all duration-300"
+                onClick={() => handlePostClick(post.path)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    handlePostClick(post.path);
+                  }
+                }}
               >
                 <div className="h-48 overflow-hidden">
                   <img 

@@ -1,40 +1,63 @@
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import FooterSection from "../../components/home/FooterSection";
-import { useState } from "react";
+
+interface BlogPost {
+  date: string;
+  image: string;
+  title: string;
+  description: string;
+  path: string;
+}
 
 const CareeroppPage = () => {
+  const navigate = useNavigate();
   const [currentPage] = useState(0);
   const postsPerPage = 3;
 
-  const recommendedPosts = [
+  const recommendedPosts: BlogPost[] = [
     {
-      date: "21th Dec",
-      image: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "IELTS Preparation Tips and Tricks",
-      description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-      path: "/blog/ielts-preparation"
+      date: "15th Mar",
+      image: "https://images.pexels.com/photos/2422280/pexels-photo-2422280.jpeg?auto=compress&cs=tinysrgb&w=600",
+      title: "Student Visa Guide",
+      description: "Complete guide to student visa application process, requirements, and tips for successful approval.",
+      path: "/blog/student-visa-guide"
+    },
+    {
+      date: "10th Apr",
+      image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=600",
+      title: "Free Online Courses",
+      description: "Discover valuable free online courses to enhance your skills and knowledge in various fields.",
+      path: "/blog/free-courses"
     },
     {
       date: "12th Feb",
       image: "https://images.pexels.com/photos/3184394/pexels-photo-3184394.jpeg?auto=compress&cs=tinysrgb&w=600",
       title: "Guide to Study in Australia 2024",
-      description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
+      description: "Everything you need to know about studying in Australia: university options, admission requirements, and more.",
       path: "/blog/guide-to-australia"
-    },
-    {
-      date: "7th Jun",
-      image: "https://images.pexels.com/photos/2422290/pexels-photo-2422290.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "How to Write a Winning SOP",
-      description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-      path: "/blog/how-to-write-sop"
     }
   ];
 
-  
+  const handlePostClick = (path: string) => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+    navigate(path);
+  };
+
   const getCurrentPosts = () => {
     const startIndex = currentPage * postsPerPage;
     return recommendedPosts.slice(startIndex, startIndex + postsPerPage);
   };
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+  }, []);
 
   return (
     <div className="flex flex-col w-full">
@@ -75,19 +98,24 @@ const CareeroppPage = () => {
         
           <div className="w-full max-w-[95%]">
             <p className="mb-4 text-justify">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet,
+              Studying abroad opens up a world of career opportunities that extend far beyond just earning a degree. International education equips students with a unique set of skills and experiences that are highly valued in today's globalized job market. From developing cross-cultural communication abilities to gaining exposure to diverse working environments, the benefits of studying abroad can significantly enhance your career prospects.
             </p>
-           
+            <p className="mb-4 text-justify">
+              One of the primary advantages of international education is the opportunity to build a global professional network. During your studies, you'll connect with peers, professors, and industry professionals from various countries, creating valuable relationships that can lead to future career opportunities. Many universities also offer internship programs and industry partnerships, allowing students to gain practical experience in their field while studying.
+            </p>
 
             {/* Highlight Box */}
             <div className="bg-blue-100 border-l-4 border-[#074293] text-[#333333] p-4 my-6 ml-8">
               <p className="font-semibold text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing
+                According to recent studies, graduates with international education experience are 30% more likely to secure employment within 6 months of graduation compared to their peers. Additionally, they often command higher starting salaries and have faster career progression due to their global perspective and enhanced skill set. Many multinational companies specifically seek candidates with international exposure for their ability to navigate diverse business environments.
               </p>
             </div>
 
             <p className="text-justify">
-             Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.L
+              The career paths available after studying abroad are diverse and promising. Many graduates find opportunities in multinational corporations, international organizations, or start their own global ventures. Some popular career trajectories include international business development, global consulting, cross-cultural management, diplomatic services, and international education administration. The experience of studying abroad also develops essential soft skills like adaptability, problem-solving, and independent thinking - qualities that employers consistently rank as highly desirable.
+            </p>
+            <p className="mb-4 text-justify">
+              Moreover, studying abroad often provides access to post-study work opportunities in the host country. Many countries offer special work visas or pathways to permanent residency for international graduates, creating additional career possibilities. Whether you choose to work in your host country, return home, or explore opportunities in other parts of the world, an international education serves as a powerful catalyst for global career success.
             </p>
           </div>
         </div>
@@ -103,7 +131,15 @@ const CareeroppPage = () => {
             {getCurrentPosts().map((post, index) => (
               <div
                 key={index}
-                className="bg-white overflow-hidden shadow-md text-left relative h-[420px] max-w-[350px] mx-auto w-full"
+                className="bg-white overflow-hidden shadow-md text-left relative h-[420px] max-w-[350px] mx-auto w-full cursor-pointer hover:shadow-xl transition-all duration-300"
+                onClick={() => handlePostClick(post.path)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    handlePostClick(post.path);
+                  }
+                }}
               >
                 <div className="h-48 overflow-hidden">
                   <img 

@@ -1,41 +1,63 @@
-import { Link } from "react-router-dom";
-import FooterSection from "../../components/home/FooterSection";
+import { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import FooterSection from '../../components/home/FooterSection';
 
-import { useState } from "react";
+interface BlogPost {
+  date: string;
+  image: string;
+  title: string;
+  description: string;
+  path: string;
+}
 
 const ScholaroppPage = () => {
-  const [currentPage, ] = useState(0);
+  const navigate = useNavigate();
+  const [currentPage] = useState(0);
   const postsPerPage = 3;
 
-  const recommendedPosts = [
+  const recommendedPosts: BlogPost[] = [
     {
       date: "3rd Apr",
       image: "https://images.pexels.com/photos/2422278/pexels-photo-2422278.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Student Life in the United Kingdom",
-      description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
+      title: "Student Life in the UK",
+      description: "Experience the vibrant student life in the UK: from campus activities to city exploration. Get insights on accommodation and social life.",
       path: "/blog/student-life-uk"
     },
     {
       date: "5th Apr",
       image: "https://images.pexels.com/photos/2422293/pexels-photo-2422293.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Top Universities in USA",
-      description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-      path: "/blog/top-universities-usa"
+      title: "Top Universities in Australia",
+      description: "Discover Australia's leading universities, their rankings, specializations, and what makes them stand out in global education.",
+      path: "/blog/top-universities-australia"
     },
     {
-      date: "12th Feb",
-      image: "https://images.pexels.com/photos/3184394/pexels-photo-3184394.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Guide to Study in Australia 2024",
-      description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-      path: "/blog/guide-to-australia"
+      date: "7th Jun",
+      image: "https://images.pexels.com/photos/2422290/pexels-photo-2422290.jpeg?auto=compress&cs=tinysrgb&w=600",
+      title: "How to Write a Winning SOP",
+      description: "Learn the essential tips and strategies for crafting a compelling Statement of Purpose that stands out in your university applications.",
+      path: "/blog/how-to-write-sop"
     }
   ];
 
-  
+  const handlePostClick = (path: string) => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+    navigate(path);
+  };
+
   const getCurrentPosts = () => {
     const startIndex = currentPage * postsPerPage;
     return recommendedPosts.slice(startIndex, startIndex + postsPerPage);
   };
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+  }, []);
 
   return (
     <div className="flex flex-col w-full">
@@ -66,7 +88,7 @@ const ScholaroppPage = () => {
         <div className="pl-16 pr-8">
           <p className="text-sm text-[#FF8E3C] font-semibold mb-2">Our Initiative</p>
           <h1 className="text-3xl font-bold text-[#074293] mb-6">
-            Scholarship Opportunities in Canada
+            Scholarship Opportunities in Dubai
           </h1>
           <img 
             src="https://images.pexels.com/photos/2422280/pexels-photo-2422280.jpeg?auto=compress&cs=tinysrgb&w=600" 
@@ -76,19 +98,29 @@ const ScholaroppPage = () => {
         
           <div className="w-full max-w-[95%]">
             <p className="mb-4 text-justify">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet,
+              Scholarships represent invaluable opportunities for students to pursue their academic dreams without the burden of financial constraints. From merit-based awards to need-based grants, various scholarship programs are available worldwide, offering partial to full funding for international education. Understanding these opportunities and their requirements is crucial for successful applications.
             </p>
-           
+            <p className="mb-4 text-justify">
+              Major scholarship categories include government scholarships, university-specific awards, organization-sponsored programs, and country-specific opportunities. These can cover tuition fees, living expenses, travel costs, and sometimes even provide additional allowances. Notable programs include the Fulbright Scholarships, Commonwealth Scholarships, Erasmus Mundus, and various country-specific government scholarships.
+            </p>
 
             {/* Highlight Box */}
             <div className="bg-blue-100 border-l-4 border-[#074293] text-[#333333] p-4 my-6 ml-8">
               <p className="font-semibold text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing
+                Key factors in successful scholarship applications include strong academic performance, leadership potential, extracurricular activities, and clear career goals. A compelling personal statement, strong letters of recommendation, and a well-researched study plan are essential components. Start your application process early, as many prestigious scholarships have deadlines 6-12 months before the academic year begins. Pay careful attention to eligibility criteria and required documentation.
               </p>
             </div>
 
             <p className="text-justify">
-             Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.L
+              Research-based scholarships often require a detailed research proposal and academic references. For undergraduate scholarships, emphasis is typically placed on academic excellence and extracurricular achievements. Graduate scholarships might focus more on research potential, work experience, and specific skill sets relevant to the chosen field of study.
+            </p>
+
+            <p className="mb-4 text-justify">
+              Beyond traditional academic scholarships, opportunities exist in specialized fields like sports, arts, and community service. Many organizations also offer scholarships targeting specific demographics or regions. Additionally, some universities provide teaching or research assistantships that can significantly reduce education costs while providing valuable experience.
+            </p>
+
+            <p className="mb-4 text-justify">
+              To maximize your chances of securing a scholarship, maintain a strong academic record, engage in meaningful extracurricular activities, and develop leadership skills. Stay informed about application deadlines, requirements, and new opportunities through educational websites, university portals, and scholarship databases. Consider applying to multiple scholarships to increase your chances of success.
             </p>
           </div>
         </div>
@@ -104,7 +136,15 @@ const ScholaroppPage = () => {
             {getCurrentPosts().map((post, index) => (
               <div
                 key={index}
-                className="bg-white overflow-hidden shadow-md text-left relative h-[420px] max-w-[350px] mx-auto w-full"
+                className="bg-white overflow-hidden shadow-md text-left relative h-[420px] max-w-[350px] mx-auto w-full cursor-pointer hover:shadow-xl transition-all duration-300"
+                onClick={() => handlePostClick(post.path)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    handlePostClick(post.path);
+                  }
+                }}
               >
                 <div className="h-48 overflow-hidden">
                   <img 

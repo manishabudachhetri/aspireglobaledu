@@ -8,107 +8,64 @@ const blogPosts = [
     date: "1th Jan",
     image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=600",
     title: "Free Online Courses From Top Universities",
-    description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
+    description: "Discover world-class education at your fingertips with free courses from leading universities. ",
     path: "/blog/free-courses"
   },
   {
     date: "12th Feb",
     image: "https://images.pexels.com/photos/3184394/pexels-photo-3184394.jpeg?auto=compress&cs=tinysrgb&w=600",
-    title: "Guide to Study in Australia 2024",
-    description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
+    title: "Guide to Study in Australia",
+    description: "Everything you need to know about studying in Australia: university options, admission requirements, visa processes, and living costs. ",
     path: "/blog/guide-to-australia"
   },
   {
     date: "21th Dec",
     image: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600",
     title: "IELTS Preparation Tips and Tricks",
-    description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
+    description: "Master the IELTS exam with our expert strategies. Get practical tips for all four sections: Reading, Writing, Listening, and Speaking. ",
     path: "/blog/ielts-preparation"
   },
   {
     date: "15th Mar",
     image: "https://images.pexels.com/photos/2422280/pexels-photo-2422280.jpeg?auto=compress&cs=tinysrgb&w=600",
-    title: "Scholarship Opportunities in Canada",
-    description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-    path: "/blog/scholarship-canada"
+    title: "Scholarship Opportunities in Dubai",
+    description: "Explore lucrative scholarship opportunities in Dubai's top universities. Learn about eligibility criteria, application processes, and deadlines for various academics.",
+    path: "/blog/scholarship-dubai"
   },
   {
     date: "3rd Apr",
     image: "https://images.pexels.com/photos/2422278/pexels-photo-2422278.jpeg?auto=compress&cs=tinysrgb&w=600",
-    title: "Student Life in the United Kingdom",
-    description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
+    title: "Student Life in the UK",
+    description: "Experience the vibrant student life in the UK: from campus activities to city exploration. ",
     path: "/blog/student-life-uk"
   },
   {
     date: "18th May",
     image: "https://images.pexels.com/photos/2422293/pexels-photo-2422293.jpeg?auto=compress&cs=tinysrgb&w=600",
-    title: "Top Universities in the USA",
-    description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-    path: "/blog/top-universities-usa"
+    title: "Top Universities in the Australia",
+    description: "Explore Australia's leading universities, their world rankings, specializations, and unique offerings. ",
+    path: "/blog/top-universities-australia"
   },
   {
     date: "7th Jun",
     image: "https://images.pexels.com/photos/2422290/pexels-photo-2422290.jpeg?auto=compress&cs=tinysrgb&w=600",
     title: "How to Write a Winning SOP",
-    description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
+    description: "Craft a compelling Statement of Purpose that stands out. Learn essential tips for structure, content, and presentation. ",
     path: "/blog/how-to-write-sop"
   },
   {
     date: "22nd Jul",
     image: "https://images.pexels.com/photos/2422283/pexels-photo-2422283.jpeg?auto=compress&cs=tinysrgb&w=600",
     title: "Career Opportunities After Study Abroad",
-    description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
+    description: "Discover diverse career paths after international education. Learn about global job markets and professional networking strategies. ",
     path: "/blog/career-opportunities"
   },
   {
     date: "9th Aug",
     image: "https://images.pexels.com/photos/2422284/pexels-photo-2422284.jpeg?auto=compress&cs=tinysrgb&w=600",
     title: "Student Visa Application Guide",
-    description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
+    description: "Step-by-step guide to securing your student visa. Understand documentation requirements, financial proof, interview preparation, and common reasons for visa rejection.",
     path: "/blog/student-visa-guide"
-  },
-  // Adding 6 more blog posts
-  {
-    date: "14th Sep",
-    image: "https://images.pexels.com/photos/2422285/pexels-photo-2422285.jpeg?auto=compress&cs=tinysrgb&w=600",
-    title: "Preparing for University Interviews",
-    description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-    path: "/blog/university-interviews"
-  },
-  {
-    date: "25th Oct",
-    image: "https://images.pexels.com/photos/2422286/pexels-photo-2422286.jpeg?auto=compress&cs=tinysrgb&w=600",
-    title: "Financial Planning for International Students",
-    description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-    path: "/blog/financial-planning"
-  },
-  {
-    date: "30th Nov",
-    image: "https://images.pexels.com/photos/2422287/pexels-photo-2422287.jpeg?auto=compress&cs=tinysrgb&w=600",
-    title: "Cultural Adaptation Tips",
-    description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-    path: "/blog/cultural-adaptation"
-  },
-  {
-    date: "5th Dec",
-    image: "https://images.pexels.com/photos/2422288/pexels-photo-2422288.jpeg?auto=compress&cs=tinysrgb&w=600",
-    title: "Part-time Work Opportunities Abroad",
-    description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-    path: "/blog/part-time-work"
-  },
-  {
-    date: "19th Dec",
-    image: "https://images.pexels.com/photos/2422289/pexels-photo-2422289.jpeg?auto=compress&cs=tinysrgb&w=600",
-    title: "Choosing the Right Study Program",
-    description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-    path: "/blog/choosing-study-program"
-  },
-  {
-    date: "28th Dec",
-    image: "https://images.pexels.com/photos/2422291/pexels-photo-2422291.jpeg?auto=compress&cs=tinysrgb&w=600",
-    title: "Student Housing Guide",
-    description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-    path: "/blog/student-housing"
   }
 ];
 
@@ -217,23 +174,32 @@ const Blogg = () => {
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
-            {[...Array(totalPages)].map((_, i) => (
-              <button
-                key={i + 1}
-                className={`p-2 border min-w-[40px] ${
-                  currentPage === i + 1 
-                    ? "bg-[#074293] text-white" 
-                    : "bg-white hover:bg-gray-100 transition-colors"
-                }`}
-                onClick={() => handlePageChange(i + 1)}
-              >
-                {i + 1}
-              </button>
-            ))}
+            <button
+              key={1}
+              className={`border px-4 py-2 ${
+                currentPage === 1
+                  ? 'bg-[#074293] text-white'
+                  : 'hover:bg-gray-100'
+              } transition-colors`}
+              onClick={() => handlePageChange(1)}
+            >
+              1
+            </button>
+            <button
+              key={2}
+              className={`border px-4 py-2 ${
+                currentPage === 2
+                  ? 'bg-[#074293] text-white'
+                  : 'hover:bg-gray-100'
+              } transition-colors`}
+              onClick={() => handlePageChange(2)}
+            >
+              2
+            </button>
             <button
               className="border p-2 disabled:opacity-50 hover:bg-gray-100 transition-colors"
               onClick={() => handlePageChange(currentPage + 1)}
-              disabled={currentPage === totalPages}
+              disabled={currentPage === 2}
             >
               <ChevronRight className="w-4 h-4" />
             </button>

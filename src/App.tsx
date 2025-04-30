@@ -57,6 +57,7 @@ import StudentLife from './pages/Blogg/StudentLife';
 import TopUni from './pages/Blogg/TopUni';
 import SOP from './pages/Blogg/SOP';
 import Studentvisa from './pages/Blogg/studentvisa';
+import ScholaroppPage from './pages/Blogg/Scholaropp';
 
 function App() {
   return (
@@ -119,11 +120,12 @@ function App() {
             <Route path="/blog/free-courses" element={<FreeCourses />} />
             <Route path="/blog/guide-to-australia" element={<GuidetoAus />} />
             <Route path="/blog/ielts-preparation" element={<Ieltsprep />} />
-            <Route path="/blog/scholarship-canada" element={<Scholaropp />} />
+            <Route path="/blog/scholarship-dubai" element={<Scholaropp />} />
             <Route path="/blog/student-life-uk" element={<StudentLife />} />
-            <Route path="/blog/top-universities-usa" element={<TopUni />} />
+            <Route path="/blog/top-universities-australia" element={<TopUni />} />
             <Route path="/blog/how-to-write-sop" element={<SOP />} />
             <Route path="/blog/student-visa-guide" element={<Studentvisa />} />
+            <Route path="/blog/scholarship-opportunities" element={<ScholaroppPage />} />
             <Route path="*" element={
               <div className="flex flex-col items-center justify-center min-h-screen">
                 <h1 className="text-4xl font-bold text-[#074293]">404: Page Not Found</h1>
@@ -140,6 +142,7 @@ function App() {
 }
 
 export default App;
+
 
 
 

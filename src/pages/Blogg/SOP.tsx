@@ -15,12 +15,29 @@ const SOPPage = () => {
   const [currentPage] = useState(0);
   const postsPerPage = 3;
 
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'instant'
-    });
-  }, []);
+  const recommendedPosts: BlogPost[] = [
+    {
+      date: "12th May",
+      image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600",
+      title: "Career Opportunities Abroad",
+      description: "Explore exciting career prospects and job opportunities for international students in global markets.",
+      path: "/blog/career-opportunities"
+    },
+    {
+      date: "15th Mar",
+      image: "https://images.pexels.com/photos/2422280/pexels-photo-2422280.jpeg?auto=compress&cs=tinysrgb&w=600",
+      title: "Student Visa Guide",
+      description: "Complete guide to student visa application process, requirements, and tips for successful approval.",
+      path: "/blog/student-visa-guide"
+    },
+    {
+      date: "10th Apr",
+      image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=600",
+      title: "Free Online Courses",
+      description: "Discover valuable free online courses to enhance your skills and knowledge in various fields.",
+      path: "/blog/free-courses"
+    }
+  ];
 
   const handlePostClick = (path: string) => {
     window.scrollTo({
@@ -30,58 +47,17 @@ const SOPPage = () => {
     navigate(path);
   };
 
-  const recommendedPosts: BlogPost[] = [
-    {
-      date: "12th Feb",
-      image: "https://images.pexels.com/photos/3184394/pexels-photo-3184394.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Guide to Study in Australia 2024",
-      description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-      path: "/blog/guide-to-australia"
-    },
-    {
-      date: "15th Mar",
-      image: "https://images.pexels.com/photos/2422280/pexels-photo-2422280.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Scholarship Opportunities in Canada",
-      description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-      path: "/blog/scholarship-canada"
-    },
-    {
-      date: "3rd Apr",
-      image: "https://images.pexels.com/photos/2422278/pexels-photo-2422278.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Student Life in the United Kingdom",
-      description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-      path: "/blog/student-life-uk"
-    },
-    {
-      date: "21th Dec",
-      image: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "IELTS Preparation Tips and Tricks",
-      description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-      path: "/blog/ielts-preparation"
-    },
-    {
-      date: "5th Apr",
-      image: "https://images.pexels.com/photos/2422293/pexels-photo-2422293.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Top Universities in USA",
-      description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-      path: "/blog/top-universities-usa"
-    },
-    {
-      date: "10th Apr",
-      image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "Free Online Courses",
-      description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-      path: "/blog/free-courses"
-    }
-  ];
-
-  
   const getCurrentPosts = () => {
     const startIndex = currentPage * postsPerPage;
     return recommendedPosts.slice(startIndex, startIndex + postsPerPage);
   };
 
-
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+  }, []);
 
   return (
     <div className="flex flex-col w-full">
@@ -122,19 +98,29 @@ const SOPPage = () => {
         
           <div className="w-full max-w-[95%]">
             <p className="mb-4 text-justify">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet,
+              A Statement of Purpose (SOP) is more than just an application requirement – it's your opportunity to tell your unique story and convince admissions committees of your potential. This crucial document should effectively communicate your academic background, career goals, and motivation for pursuing your chosen program. A well-crafted SOP can significantly influence your admission chances at top universities.
             </p>
-           
+            <p className="mb-4 text-justify">
+              The key elements of a strong SOP include your academic journey, relevant experiences, career aspirations, and specific reasons for choosing the program and institution. Your statement should demonstrate clear progression in your academic and professional development, highlighting how your past experiences have prepared you for this next step. It's essential to show how the program aligns with your future goals.
+            </p>
 
             {/* Highlight Box */}
             <div className="bg-blue-100 border-l-4 border-[#074293] text-[#333333] p-4 my-6 ml-8">
               <p className="font-semibold text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing
+                When writing your SOP, focus on being specific, authentic, and engaging. Start with a compelling introduction that captures attention, develop your narrative with concrete examples and achievements, and conclude by connecting your goals with what the program offers. Avoid generic statements and clichés. Instead, provide specific instances that demonstrate your skills, experiences, and determination. Remember to tailor each SOP to the specific program and institution you're applying to.
               </p>
             </div>
 
             <p className="text-justify">
-             Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.L
+              Common mistakes to avoid include writing an overly emotional story, focusing too much on childhood experiences, or simply listing achievements without context. Your SOP should maintain a professional tone while showing personality and passion. Be honest in your statement – admissions committees can often detect exaggerated or false claims.
+            </p>
+
+            <p className="mb-4 text-justify">
+              Research is crucial when writing your SOP. Understand the program's curriculum, faculty expertise, research opportunities, and unique features. Demonstrate how these align with your interests and goals. If you have specific professors you'd like to work with or research areas you're interested in, mention these, showing you've done your homework.
+            </p>
+
+            <p className="mb-4 text-justify">
+              The writing process should include multiple drafts and revisions. Start early to allow time for reflection and refinement. Have others review your statement – professors, professionals in your field, or career counselors can provide valuable feedback. Pay attention to technical aspects like word limit, formatting requirements, and proper grammar and punctuation. A polished, well-written SOP reflects your professionalism and attention to detail.
             </p>
           </div>
         </div>

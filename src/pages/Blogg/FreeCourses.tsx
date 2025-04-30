@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import FooterSection from '../../components/home/FooterSection';
 
 interface BlogPost {
@@ -11,8 +11,17 @@ interface BlogPost {
 }
 
 const FreeCoursesPage = () => {
+  const navigate = useNavigate();
   const [currentPage] = useState(0);
   const postsPerPage = 3;
+
+  const handlePostClick = (path: string) => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+    navigate(path);
+  };
 
   useEffect(() => {
     window.scrollTo({
@@ -24,25 +33,25 @@ const FreeCoursesPage = () => {
 
   const recommendedPosts: BlogPost[] = [
     {
-      date: "21th Dec",
-      image: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "IELTS Preparation Tips and Tricks",
-      description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-      path: "/blog/ielts-preparation"
-    },
-    {
       date: "12th Feb",
       image: "https://images.pexels.com/photos/3184394/pexels-photo-3184394.jpeg?auto=compress&cs=tinysrgb&w=600",
       title: "Guide to Study in Australia 2024",
-      description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
+      description: "Everything you need to know about studying in Australia: university options, admission requirements, visa processes, and living costs.",
       path: "/blog/guide-to-australia"
     },
     {
-      date: "7th Jun",
-      image: "https://images.pexels.com/photos/2422290/pexels-photo-2422290.jpeg?auto=compress&cs=tinysrgb&w=600",
-      title: "How to Write a Winning SOP",
-      description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
-      path: "/blog/how-to-write-sop"
+      date: "21th Dec",
+      image: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600",
+      title: "IELTS Preparation Tips and Tricks",
+      description: "Master the IELTS exam with our expert strategies. Get practical tips for all four sections: Reading, Writing, Listening, and Speaking.",
+      path: "/blog/ielts-preparation"
+    },
+    {
+      date: "15th Mar",
+      image: "https://images.pexels.com/photos/2422280/pexels-photo-2422280.jpeg?auto=compress&cs=tinysrgb&w=600",
+      title: "Scholarship Opportunities in Dubai",
+      description: "Explore lucrative scholarship opportunities in Dubai's top universities. Learn about eligibility criteria and application processes.",
+      path: "/blog/scholarship-dubai"
     }
   ];
 
@@ -91,19 +100,24 @@ const FreeCoursesPage = () => {
         
           <div className="w-full max-w-[95%]">
             <p className="mb-4 text-justify">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet,
+              In today's digital age, access to quality education shouldn't be limited by financial constraints. Leading universities worldwide are increasingly offering free online courses, making world-class education accessible to everyone. These courses, often called MOOCs (Massive Open Online Courses), cover a wide range of subjects from computer science and business to arts and humanities, allowing learners to acquire new skills and knowledge at their own pace.
             </p>
-           
+            <p className="mb-4 text-justify">
+              These online courses are designed and taught by experienced professors from prestigious institutions, ensuring high-quality educational content. Students can access video lectures, reading materials, assignments, and interactive discussions, creating a comprehensive learning experience. Many courses also offer certificates of completion, which can be valuable additions to your resume and professional portfolio.
+            </p>
 
             {/* Highlight Box */}
             <div className="bg-blue-100 border-l-4 border-[#074293] text-[#333333] p-4 my-6 ml-8">
               <p className="font-semibold text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing
+                Key benefits of free online courses include flexible learning schedules, self-paced study options, and the ability to learn from anywhere in the world. Whether you're a student looking to supplement your education, a professional seeking to upgrade your skills, or someone pursuing personal development, these courses provide an excellent opportunity to expand your knowledge without financial burden. Many courses also offer peer interaction and discussion forums, creating a global learning community.
               </p>
             </div>
 
             <p className="text-justify">
-             Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque.L
+              Popular platforms offering free courses include Coursera, edX, and FutureLearn, which partner with universities like Harvard, MIT, Stanford, and other leading institutions. These platforms regularly update their course offerings to reflect current industry trends and demands. While the courses are free to audit, some platforms offer optional paid certificates upon completion, which can be valuable for professional development.
+            </p>
+            <p className="mb-4 text-justify">
+              For international students, these courses can be particularly beneficial in preparing for university studies abroad. They provide exposure to different teaching styles, help improve English language skills, and offer insights into specific academic disciplines. Additionally, completing relevant online courses demonstrates initiative and commitment to learning, which can strengthen university applications and scholarship opportunities.
             </p>
           </div>
         </div>
@@ -119,7 +133,15 @@ const FreeCoursesPage = () => {
             {getCurrentPosts().map((post, index) => (
               <div
                 key={index}
-                className="bg-white overflow-hidden shadow-md text-left relative h-[420px] max-w-[350px] mx-auto w-full"
+                className="bg-white overflow-hidden shadow-md text-left relative h-[420px] max-w-[350px] mx-auto w-full cursor-pointer hover:shadow-xl transition-all duration-300"
+                onClick={() => handlePostClick(post.path)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    handlePostClick(post.path);
+                  }
+                }}
               >
                 <div className="h-48 overflow-hidden">
                   <img 
@@ -152,6 +174,10 @@ const FreeCoursesPage = () => {
 };
 
 export default FreeCoursesPage;
+
+
+
+
 
 
 
