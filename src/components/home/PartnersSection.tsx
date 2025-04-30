@@ -76,9 +76,9 @@ const PartnersSection: FC = () => {
   }, [totalSlides]);
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-8 bg-gray-50"> {/* Changed py-16 to py-8 to reduce vertical padding */}
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8"> {/* Changed mb-12 to mb-8 to reduce bottom margin */}
           <h2 className="text-xl text-[#FF8E3C]">Institutions</h2>
           <p className="text-[#074293] font-bold text-3xl mt-4">Our Affiliated Universities</p>
         </div>
@@ -134,6 +134,7 @@ const PartnersSection: FC = () => {
 };
 
 export default PartnersSection;
+
 
 
 

@@ -7,7 +7,7 @@ const FooterSection = () => {
 
   const quickLinks = [
     { name: 'Home', url: '/' },
-    { name: 'About Us', url: '/about' },
+    { name: 'About Us', url: '/aboutus' },
     { name: 'Services', url: '/services' },  
     { name: 'Contact', url: '/contact' },
     { name: 'Preparation Class', url: '/preparation class' },
@@ -92,7 +92,7 @@ const FooterSection = () => {
             </p>
             
             <button 
-              onClick={() => handleQuickLinkClick('/about')}
+              onClick={() => handleQuickLinkClick('/aboutus')}
               className="bg-[#0a3b7c] text-white px-8 py-3 border-2 border-[#0a3b7c] hover:bg-[#074293] hover:border-[#074293] transition-all font-semibold inline-block"
             >
               About Us →
@@ -231,6 +231,7 @@ const FooterSection = () => {
 };
 
 export default FooterSection;
+
 
 
 
