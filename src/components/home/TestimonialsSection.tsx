@@ -9,25 +9,25 @@ const TestimonialsSection = () => {
       id: 1,
       name: "Priya Chhetri",
       image: "https://images.unsplash.com/photo-1618355776464-8666794d2520?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fHN0dWRlbnR8ZW58MHx8MHx8fDA%3D",
-      quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      quote: "Aspire Global Education made my dream of studying in the UK a reality. Their counselors provided exceptional guidance throughout the application process, and their test preparation programs helped me achieve the IELTS score I needed.",
     },
     {
       id: 2,
       name: "David Rai",
       image: "https://images.unsplash.com/photo-1545696968-1a5245650b36?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fHN0dWRlbnR8ZW58MHx8MHx8fDA%3D",
-      quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      quote: "The personalized attention and support I received from Aspire Global Education was outstanding. They helped me secure admission to my dream university in Dubai and guided me through every step of the visa process.",
     },
     {
       id: 3,
       name: "Nisha Thapa",
       image: "https://images.unsplash.com/photo-1544717305-2782549b5136?w=500&auto=format&fit=crop",
-      quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      quote: "Thanks to Aspire Global Education's expert counseling, I was able to make an informed decision about my study destination. Their test preparation classes and mock interviews were invaluable in helping me succeed.",
     },
     {
       id: 4,
       name: "Ruhi Karki",
       image: "https://images.unsplash.com/photo-1529470839332-78ad660a6a82?w=500&auto=format&fit=crop",
-      quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      quote: "I'm grateful for the dedicated support from the Aspire Global Education team. Their comprehensive guidance, from university selection to visa application, made my journey to studying in Malta smooth and stress-free.",
     }
   ];
 
@@ -115,6 +115,7 @@ const TestimonialsSection = () => {
 };
 
 export default TestimonialsSection;
+
 
 
 

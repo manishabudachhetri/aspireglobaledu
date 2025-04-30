@@ -50,7 +50,7 @@ const TOEFLPage = () => {
             <div className="space-y-4">
               <h3 className="text-[#074293] text-2xl font-bold mb-2">TOEFL Course Overview</h3>
               <p className="text-gray-700 text-justify">
-               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                The Test of English as a Foreign Language (TOEFL) is a widely accepted English-language test that specifically measures your ability to use and understand English at the university level. Our TOEFL preparation course focuses on developing academic English skills and test-taking strategies to help students achieve their target scores.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-6 mb-6">
@@ -86,8 +86,15 @@ const TOEFLPage = () => {
 
               <h3 className="text-[#074293] text-2xl font-bold mb-2">Course Curriculum</h3>
               <p className="text-gray-700 text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Our TOEFL preparation program covers all four sections of the test:
               </p>
+              <ul className="list-disc pl-6 mt-4 space-y-2 text-gray-700">
+                <li><strong>Reading:</strong> Academic passage comprehension, vocabulary in context, inference skills</li>
+                <li><strong>Listening:</strong> Lecture comprehension, conversation understanding, note-taking strategies</li>
+                <li><strong>Speaking:</strong> Independent and integrated speaking tasks, pronunciation, fluency</li>
+                <li><strong>Writing:</strong> Integrated and independent essays, academic writing skills</li>
+                <li><strong>Practice Materials:</strong> Full-length mock tests, section-wise practice, score analysis</li>
+              </ul>
             </div>
           </div>
 
@@ -190,6 +197,7 @@ const TOEFLPage = () => {
 };
 
 export default TOEFLPage;
+
 
 
 

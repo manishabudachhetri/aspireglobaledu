@@ -25,7 +25,7 @@ const Dubai = () => {
     contactNumber: '',
     qualification: '',
     passedOutYear: '',
-    preferredCountry: 'UAE',
+    preferredCountry: 'Dubai',
     preferredDegree: '',
     course: '',
     specificCourse: '',
@@ -53,7 +53,7 @@ const Dubai = () => {
         contactNumber: '',
         qualification: '',
         passedOutYear: '',
-        preferredCountry: 'UAE',
+        preferredCountry: 'Dubai',
         preferredDegree: '',
         course: '',
         specificCourse: '',
@@ -76,7 +76,7 @@ const Dubai = () => {
 
   const countryLinks = [
     { name: 'Study in Malta', path: '/abroad-study/malta' },
-    { name: 'Study in UAE', path: '/abroad-study/uae' },
+    { name: 'Study in Dubai', path: '/abroad-study/dubai' },
     { name: 'Study in UK', path: '/abroad-study/uk' },
     { name: 'Study in Australia', path: '/abroad-study/australia' }
   ];
@@ -92,10 +92,10 @@ const Dubai = () => {
       >
         <div className="absolute inset-0 bg-black bg-opacity-35 flex items-center justify-center">
           <div className="text-center text-white">
-            <h1 className="text-4xl font-bold">Study in UAE</h1>
+            <h1 className="text-4xl font-bold">Study in Dubai</h1>
             <p className="mt-2">
               <Link to="/" className="hover:text-[#FF8E3C]">Home</Link> /{" "}
-              <Link to="/abroad-study" className="hover:text-[#FF8E3C]">Abroad Study</Link> / UAE
+              <Link to="/abroad-study" className="hover:text-[#FF8E3C]">Abroad Study</Link> / Dubai
             </p>
           </div>
         </div>

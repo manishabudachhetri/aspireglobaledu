@@ -21,7 +21,7 @@ interface ContactForm {
 
 const countryLinks = [
   { name: 'Study in Malta', path: '/abroad-study/malta' },
-  { name: 'Study in UAE', path: '/abroad-study/uae' },
+  { name: 'Study in Dubai', path: '/abroad-study/dubai' },
   { name: 'Study in UK', path: '/abroad-study/uk' },
   { name: 'Study in Australia', path: '/abroad-study/australia' }
 ];

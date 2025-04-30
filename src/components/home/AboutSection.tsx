@@ -26,6 +26,7 @@ const AboutSection = () => {
           <p className="text-black-700 mb-4 text-justify">
             Aspire Global Education Consultancy Pvt. Ltd. is a professional educational consultancy dedicated to providing high-quality, affordable, and reliable test preparation and study abroad guidance. We specialize in assisting students who aspire to pursue higher education in Dubai, the UK, Malta, and other global destinations. Our commitment to continuous improvement ensures excellence in our services. We offer authentic, up-to-date information on universities, and our experienced team streamlines the application process, making it efficient and hassle-free for students.
           </p>
+          
           <button 
             onClick={handleReadMore}
             className="flex items-center space-x-2 bg-blue-700 hover:bg-blue-800 text-white px-4 py-2 rounded transition-colors duration-300"

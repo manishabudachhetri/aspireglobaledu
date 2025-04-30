@@ -4,19 +4,19 @@ import { faUsers, faFileLines, faMoneyCheckDollar } from '@fortawesome/free-soli
 import { BsHourglassSplit } from "react-icons/bs";
 import FooterSection from '../../components/home/FooterSection';
 
-const GMAT = () => {
+const GMATPage = () => {
   return (
     <div className="flex flex-col w-full">
       {/* Header Section */}
       <div 
         className="relative w-full h-[400px] bg-cover bg-center mt-32"
         style={{ 
-          backgroundImage: 'url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=2000&auto=format&fit=crop&q=100&ixlib=rb-4.0.3")'
+          backgroundImage: 'url("https://images.unsplash.com/photo-1462536943532-57a629f6cc60?w=3000&auto=format&fit=crop&q=100&ixlib=rb-4.0.3")'
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-35 flex items-center justify-center">
           <div className="text-center text-white">
-            <h1 className="text-4xl font-bold">Graduate Management Admission Test</h1>
+            <h1 className="text-4xl font-bold">Graduate Management Admission Test (GMAT)</h1>
             <p className="mt-2">
               <Link to="/" className="hover:text-[#FF8E3C]">Home</Link> /{" "}
               <Link to="/preparation" className="hover:text-[#FF8E3C]">Test Preparation</Link> / GMAT
@@ -41,7 +41,7 @@ const GMAT = () => {
             
             <div className="relative h-[400px] overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1557989048-03456d01a26e?w=2000&auto=format&fit=crop&q=100&ixlib=rb-4.0.3"
+                src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=2070&auto=format&fit=crop"
                 alt="GMAT Test"
                 className="w-full h-full object-cover"
               />
@@ -50,9 +50,8 @@ const GMAT = () => {
             <div className="space-y-4">
               <h3 className="text-[#074293] text-2xl font-bold mb-2">GMAT Course Overview</h3>
               <p className="text-gray-700 text-justify">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                The Graduate Management Admission Test (GMAT) is a crucial exam for admission to top business schools worldwide. Our GMAT preparation course is meticulously designed to help aspirants master both the quantitative and qualitative sections of the test. With our expert instructors and comprehensive study materials, we ensure students develop the analytical, writing, and reasoning skills necessary for achieving competitive GMAT scores.
               </p>
-
               <div className="grid sm:grid-cols-2 gap-6 mb-6">
                 <div className="bg-[#e3f2fd] p-5 flex items-center gap-4">
                   <BsHourglassSplit className="text-[#e91e63] text-4xl flex-shrink-0" />
@@ -85,16 +84,22 @@ const GMAT = () => {
               </div>
 
               <h3 className="text-[#074293] text-2xl font-bold mb-2">Course Curriculum</h3>
-              <p className="text-gray-700 text-justify">
-               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing.Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              </p>
-
-             
-              
+              <div className="space-y-4">
+                <p className="text-gray-700 text-justify">
+                  Our GMAT preparation program covers all sections of the exam with specialized focus on each component:
+                </p>
+                <ul className="list-disc pl-6 mt-4 space-y-2 text-gray-700">
+                  <li><strong>Quantitative Section:</strong> Problem solving, data sufficiency, arithmetic, algebra, geometry</li>
+                  <li><strong>Verbal Section:</strong> Reading comprehension, critical reasoning, sentence correction</li>
+                  <li><strong>Analytical Writing:</strong> Essay writing techniques, argument analysis</li>
+                  <li><strong>Integrated Reasoning:</strong> Multi-source reasoning, graphics interpretation, table analysis</li>
+                  <li><strong>Test Strategies:</strong> Time management, error elimination, question approach techniques</li>
+                </ul>
+              </div>
             </div>
           </div>
 
-          {/* Right Side - Sidebar */}
+          {/* Right Side - Test Preparation Navigation */}
           <div className="md:col-span-1 order-1 md:order-2">
             <div className="flex flex-col gap-2">
               {['PTE', 'TOEFL', 'IELTS', 'GRE', 'SAT', 'GMAT'].map((test, index) => (
@@ -117,8 +122,7 @@ const GMAT = () => {
             <div className="bg-[#f5f5f5] shadow-md overflow-hidden mt-6">
               <div className="relative">
                 <img 
-                  src="https://plus.unsplash.com/premium_photo-1680807869086-e08309acfb24?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aWVsdHN8ZW58MHx8MHx8fDA%3D"
-                   
+                  src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&auto=format&fit=crop" 
                   alt="Enroll Now" 
                   className="w-full h-48 object-cover"
                 />
@@ -132,7 +136,7 @@ const GMAT = () => {
                     <label className="block text-sm mb-1 font-medium">Name*</label>
                     <input
                       type="text"
-                      className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                      className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white"
                       placeholder="Your name"
                     />
                   </div>
@@ -140,7 +144,7 @@ const GMAT = () => {
                     <label className="block text-sm mb-1 font-medium">Phone*</label>
                     <input
                       type="tel"
-                      className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                      className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white"
                       placeholder="Your phone"
                     />
                   </div>
@@ -148,7 +152,7 @@ const GMAT = () => {
                     <label className="block text-sm mb-1 font-medium">Email*</label>
                     <input
                       type="email"
-                      className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                      className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white"
                       placeholder="Your email"
                     />
                   </div>
@@ -157,8 +161,8 @@ const GMAT = () => {
                     <select className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white">
                       <option>GMAT</option>
                       <option>GRE</option>
-                      <option>IELTS</option>
                       <option>TOEFL</option>
+                      <option>IELTS</option>
                       <option>PTE</option>
                       <option>SAT</option>
                     </select>
@@ -167,7 +171,7 @@ const GMAT = () => {
                     <label className="block text-sm mb-1 font-medium">Message</label>
                     <textarea
                       rows={3}
-                      className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                      className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white"
                       placeholder="Write your message..."
                     ></textarea>
                   </div>
@@ -191,7 +195,19 @@ const GMAT = () => {
   );
 };
 
-export default GMAT;
+export default GMATPage;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

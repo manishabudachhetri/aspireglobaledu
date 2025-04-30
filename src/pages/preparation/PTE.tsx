@@ -50,7 +50,7 @@ const PTEPage = () => {
             <div className="space-y-4">
               <h3 className="text-[#074293] text-2xl font-bold mb-2">PTE Course Overview</h3>
               <p className="text-gray-700 text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                The Pearson Test of English (PTE) Academic is a computer-based English language test that assesses the speaking, writing, reading, and listening abilities of non-native English speakers. Our PTE preparation course is designed to help students achieve their desired scores through comprehensive training and practice. With our experienced instructors and proven teaching methodology, we focus on developing all the necessary skills and strategies required to excel in each section of the PTE exam.
               </p>
               <div className="grid sm:grid-cols-2 gap-6 mb-6">
                 <div className="bg-[#e3f2fd] p-5 flex items-center gap-4">
@@ -85,8 +85,15 @@ const PTEPage = () => {
 
               <h3 className="text-[#074293] text-2xl font-bold mb-2">Course Curriculum</h3>
               <p className="text-gray-700 text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Our PTE course curriculum covers all four key language skills - Speaking, Writing, Reading, and Listening. The program includes intensive practice sessions, mock tests, and personalized feedback. Students will learn essential strategies for each question type, including:
               </p>
+              <ul className="list-disc pl-6 mt-4 space-y-2 text-gray-700">
+                <li><strong>Speaking & Writing:</strong> Read aloud, repeat sentence, describe image, summarize written text, essay writing</li>
+                <li><strong>Reading:</strong> Multiple choice, re-order paragraphs, fill in the blanks, reading & writing fill in the blanks</li>
+                <li><strong>Listening:</strong> Summarize spoken text, multiple choice, fill in the blanks, highlight correct summary, write from dictation</li>
+                <li><strong>Test-Taking Strategies:</strong> Time management, scoring criteria understanding, common pitfalls to avoid</li>
+                <li><strong>Practice Materials:</strong> Access to extensive online resources, practice tests, and sample questions</li>
+              </ul>
             </div>
           </div>
 
@@ -189,6 +196,7 @@ const PTEPage = () => {
 };
 
 export default PTEPage;
+
 
 
 

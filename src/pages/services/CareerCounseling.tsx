@@ -72,11 +72,32 @@ export default function CareerCounseling() {
             </div>
 
             {/* Description */}
-            <div className="space-y-4 text-justify text-gray-700">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit
+            <div className="prose max-w-none">
+              <p className="text-gray-600 mb-4">
+                At Aspire Global Education, our career counseling service is designed to help students and professionals make informed decisions about their academic and professional futures. Our experienced counselors provide personalized guidance, taking into account your unique skills, interests, and aspirations to chart the most suitable career path.
               </p>
+
+              <h3 className="text-[#074293] text-xl font-semibold mt-8 mb-4">Our Career Counseling Services Include:</h3>
               
+              <ul className="list-disc pl-6 space-y-2 text-gray-600">
+                <li>Personality and aptitude assessment</li>
+                <li>Career path planning and guidance</li>
+                <li>Academic course selection</li>
+                <li>University and program recommendations</li>
+                <li>Professional development planning</li>
+                <li>Industry insights and trends analysis</li>
+              </ul>
+
+              <h3 className="text-[#074293] text-xl font-semibold mt-8 mb-4">Why Choose Our Career Counseling Services?</h3>
+              
+              <ul className="list-disc pl-6 space-y-2 text-gray-600">
+                <li>Experienced career counselors</li>
+                <li>Personalized attention and guidance</li>
+                <li>Comprehensive assessment tools</li>
+                <li>Updated industry knowledge</li>
+                <li>Proven success record</li>
+                <li>Long-term career support</li>
+              </ul>
             </div>
           </div>
 
@@ -104,5 +125,8 @@ export default function CareerCounseling() {
     </div>
   );
 }
+
+
+
 
 

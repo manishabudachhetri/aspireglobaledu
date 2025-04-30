@@ -119,18 +119,6 @@ const Services = () => {
             </div>
           ))}
         </div>
-
-        {/* Pagination */}
-        <div className="flex justify-center mt-8 sm:mt-12 space-x-2">
-          {[1, 2, 3, 4].map((num) => (
-            <button 
-              key={num} 
-              className="w-8 h-8 sm:w-10 sm:h-10 border border-[#074293] text-[#074293] rounded-md hover:bg-[#074293] hover:text-white transition-colors duration-300 text-sm sm:text-base"
-            >
-              {num}
-            </button>
-          ))}
-        </div>
       </div>
       <FooterSection />
     </div>
@@ -138,6 +126,7 @@ const Services = () => {
 };
 
 export default Services;
+
 
 
 

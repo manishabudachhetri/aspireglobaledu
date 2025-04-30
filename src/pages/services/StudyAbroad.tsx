@@ -13,15 +13,6 @@ export default function StudyAbroad() {
 
   const countries = [
     {
-      country: "USA",
-      features: [
-        "World-class universities",
-        "Diverse study programs",
-        "Research opportunities",
-        "Optional Practical Training (OPT)"
-      ]
-    },
-    {
       country: "UK",
       features: [
         "Historic institutions",
@@ -31,12 +22,30 @@ export default function StudyAbroad() {
       ]
     },
     {
-      country: "Canada",
+      country: "Dubai",
       features: [
+        "Modern infrastructure",
+        "Multicultural environment",
+        "Business opportunities",
+        "Tax-free income"
+      ]
+    },
+    {
+      country: "Malta",
+      features: [
+        "English-speaking country",
+        "Mediterranean lifestyle",
         "Affordable education",
+        "EU recognized degrees"
+      ]
+    },
+    {
+      country: "Australia",
+      features: [
+        "World-class universities",
         "Work while studying",
-        "Immigration opportunities",
-        "Safe environment"
+        "High quality of life",
+        "Post-study work options"
       ]
     }
   ];
@@ -140,7 +149,7 @@ export default function StudyAbroad() {
               <div className="mt-8">
                 <h3 className="text-[#074293] text-xl font-semibold mb-4">Explore Our Destinations</h3>
                 <Link 
-                  to="/study-abroad/destinations"
+                  to="/abroad-study"
                   className="inline-block bg-[#FF8E3C] text-white px-6 py-3 rounded hover:bg-[#e67e35] transition-colors duration-300"
                 >
                   View All Destinations
@@ -154,4 +163,6 @@ export default function StudyAbroad() {
     </div>
   );
 }
+
+
 

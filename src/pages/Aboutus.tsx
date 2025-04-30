@@ -7,6 +7,8 @@ import PartnersSection from '../components/home/PartnersSection';
 import FooterSection from '../components/home/FooterSection';
 import sishanImage from '../assets/images/sishan.jpg';
 import sapanaImage from '../assets/images/sapana.jpg';
+import mdImage from '../assets/images/md.jpg';
+import ceoImage from '../assets/images/ceo.jpg';
 
 const Aboutus = () => {
   useEffect(() => {
@@ -58,11 +60,10 @@ const Aboutus = () => {
               Aspire Global Education Consultancy Pvt. Ltd. is a trusted and professional education consultancy. We assist students in pursuing higher education in Dubai, the UK, Malta, and other global destinations.
             </p>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+            With over 500+ successful placements and a global reach, our qualified and passionate team is committed to delivering genuine, realistic solutions tailored to the unique aspirations of each student. We pride ourselves on our core values of conviction, reliability, and unwavering commitment, ensuring that students gain invaluable experiences while studying abroad. 
+            At Aspire Global Education, we believe in empowering the next generation of leaders and innovators to achieve their educational goals.
             </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-            </p>
+           
           </div>
           
           {/* Images Container */}
@@ -87,13 +88,13 @@ const Aboutus = () => {
         {/* CEO and MD Section */}
         <div className="mt-16">
           {/* CEO Section */}
-          <div className="grid md:grid-cols-2">
-            <div className="bg-white shadow-lg overflow-hidden">
-              <div className="h-[400px] w-full relative">
+          <div className="grid md:grid-cols-5 gap-0">
+            <div className="md:col-span-2 bg-white shadow-lg overflow-hidden">
+              <div className="h-[800px] w-full relative">
                 <div className="absolute inset-0 flex items-center justify-center bg-[#f8faff] p-4">
-                  <div className="w-[300px] h-[300px] overflow-hidden">
+                  <div className="w-[500px] h-[700px] overflow-hidden"> {/* Increased height from 500px to 700px */}
                     <img 
-                      src="https://images.unsplash.com/photo-1562788869-4ed32648eb72?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" 
+                      src={ceoImage}
                       alt="CEO"
                       className="w-full h-full object-cover"
                     />
@@ -101,56 +102,69 @@ const Aboutus = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-[#edf4ff] shadow-lg overflow-hidden">
-              <div className="p-8 flex flex-col justify-between h-[400px]">
+            <div className="md:col-span-3 bg-[#edf4ff] shadow-lg overflow-hidden">
+              <div className="px-16 pt-4 pb-8 flex flex-col justify-between h-[800px]">
                 <div>
-                  <p className="text-sm text-[#FF8E3C] font-semibold mb-1">Message From Top Level</p>
-                  <h3 className="text-3xl font-bold text-[#074293] mb-4">Message from CEO</h3>
-                  <div className="space-y-4 text-black text-justify">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                  <h3 className="text-3xl font-bold text-[#074293] mb-3">Message from CEO</h3>
+                  <div className="space-y-2 text-black text-justify">
+                    <p className="text-lg leading-relaxed">
+                      As the founder and CEO of Aspire Global Education, I would like to take a moment to share our vision and commitment to empowering students as they embark on their journeys toward higher education. What began as a vision to provide expert guidance for students seeking to study abroad has grown into a global initiative built on trust, personalized support, and a commitment to long-term success.
                     </p>
-                    <p>
-                      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+                    <p className="text-lg leading-relaxed">
+                      However, the complex processes of admissions, financial planning, and visa applications can be overwhelming. That's why our mission is to make these pathways smoother by offering tailored guidance that empowers students to make informed decisions about their futures.
+                    </p>
+                    <p className="text-lg leading-relaxed">
+                      We believe that every student deserves genuine and realistic solutions tailored to their unique aspirations. By focusing on personalized experiences, we pave the way for our students to gain invaluable knowledge and cultural experiences that will shape their futures.
+                    </p>
+                    <p className="text-lg leading-relaxed">
+                      Together, let us inspire and empower these aspiring individuals to achieve their educational goals and unlock endless opportunities.
+                    </p>
+                    <p className="text-lg leading-relaxed mb-0"> {/* Removed bottom margin */}
+                      Warm regards,
                     </p>
                   </div>
                 </div>
-                <div className="pt-4">
-                  <p className="font-bold text-[#074293] text-xl">Gaurab Bhattarai</p>
-                  <p className="text-sm font-bold text-black">Chief Executive Officer</p>
+                <div className="pt-1"> {/* Reduced padding top */}
+                  <p className="font-bold text-[#074293] text-xl">Chapendra Baral</p> {/* Changed from text-2xl to text-xl */}
+                  <p className="text-base font-bold text-black">Chief Executive Officer</p>
+                  <p className="text-base text-black">Aspire Global Education</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* MD Section */}
-          <div className="grid md:grid-cols-2">
-            <div className="bg-[#edf4ff] shadow-lg overflow-hidden">
-              <div className="p-8 flex flex-col justify-between h-[400px]">
-                <div>
-                  <p className="text-sm text-[#FF8E3C] font-semibold mb-1">Message From Top Level</p>
-                  <h3 className="text-3xl font-bold text-[#074293] mb-4">Message from MD</h3>
-                  <div className="space-y-4 text-black text-justify">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+          <div className="grid md:grid-cols-5 gap-0">
+            <div className="md:col-span-3 bg-[#edf4ff] shadow-lg overflow-hidden">
+              <div className="px-16 pt-4 pb-8 flex flex-col h-[600px]">
+                <div className="mt-16">
+                  <h3 className="text-3xl font-bold text-[#074293] mb-3">Message from MD</h3>
+                  <div className="space-y-2 text-black text-justify">
+                    <p className="text-lg leading-relaxed">
+                      At Aspire Global Education, our mission is simple - to empower students with the guidance and support they need to achieve their dreams of studying abroad. As Managing Director, I take pride in leading a team that prioritizes trust, personalized advice, and long-term student success.
                     </p>
-                    <p>
-                      Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                    <p className="text-lg leading-relaxed">
+                      We understand that the journey to international education can be complex. That's why we offer tailored solutions, helping students make informed decisions with confidence and clarity.
                     </p>
+                    <p className="text-lg leading-relaxed">
+                      Together, we're not just shaping academic paths, we're helping build brighter futures.
+                    </p>
+                    <div className="space-y-0 mt-8">
+                      <p className="text-lg leading-relaxed mb-0">Warm regards,</p>
+                      <p className="font-bold text-[#074293] text-xl mt-0">Bishal Chapagain</p>
+                      <p className="text-base font-bold text-black">Managing Director</p>
+                      <p className="text-base text-black">Aspire Global Education</p>
+                    </div>
                   </div>
-                </div>
-                <div className="pt-4">
-                  <p className="font-bold text-[#074293] text-xl">Binisha Neupane</p>
-                  <p className="text-sm font-bold text-black">Managing Director (MD)</p>
                 </div>
               </div>
             </div>
-            <div className="bg-white shadow-lg overflow-hidden">
-              <div className="h-[400px] w-full relative">
+            <div className="md:col-span-2 bg-white shadow-lg overflow-hidden">
+              <div className="h-[600px] w-full relative">
                 <div className="absolute inset-0 flex items-center justify-center bg-[#f8faff] p-4">
-                  <div className="w-[300px] h-[300px] overflow-hidden">
+                  <div className="w-[500px] h-[500px] overflow-hidden">
                     <img 
-                      src="https://images.unsplash.com/photo-1590649613897-1d5c44ca3409?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" 
+                      src={mdImage}
                       alt="MD"
                       className="w-full h-full object-cover"
                     />
@@ -214,13 +228,170 @@ const Aboutus = () => {
         <div className="mb-10">
           <PartnersSection />
         </div>
+
+        {/* Form Section */}
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-[#f5f5f5] shadow-md overflow-hidden mt-16">
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFwfGVufDB8fDB8fHww"
+                alt="Study Abroad" 
+                className="w-full h-64 object-cover"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <h3 className="text-white text-2xl font-bold">Interested in studying abroad with ASPIRE?</h3>
+              </div>
+            </div>
+            <div className="px-6 py-8">
+              <form className="space-y-4">
+                <div>
+                  <label className="block text-sm mb-1 font-medium">Full Name*</label>
+                  <input
+                    type="text"
+                    name="fullName"
+                    className="w-full px-3 py-2 border text-sm"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm mb-1 font-medium">Address*</label>
+                  <input
+                    type="text"
+                    name="address"
+                    className="w-full px-3 py-2 border text-sm"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm mb-1 font-medium">Email*</label>
+                  <input
+                    type="email"
+                    name="email"
+                    className="w-full px-3 py-2 border text-sm"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm mb-1 font-medium">Contact Number*</label>
+                  <input
+                    type="tel"
+                    name="contactNumber"
+                    className="w-full px-3 py-2 border text-sm"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm mb-1 font-medium">Preferred Country*</label>
+                  <select
+                    name="preferredCountry"
+                    className="w-full px-3 py-2 border text-sm"
+                    required
+                  >
+                    <option value="">Select Country</option>
+                    <option value="UK">UK</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Malta">Malta</option>
+                    <option value="Dubai">Dubai</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm mb-1 font-medium">Course*</label>
+                  <select
+                    name="course"
+                    className="w-full px-3 py-2 border text-sm"
+                    required
+                  >
+                    <option value="">Select Course</option>
+                    <option value="Business & Management">Business & Management</option>
+                    <option value="IT & Computing">IT & Computing</option>
+                    <option value="Information Technology">Information Technology</option>
+                    <option value="Nursing & Healthcare">Nursing & Healthcare</option>
+                    <option value="Health & Social Care">Health & Social Care</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Hospitality & Tourism">Hospitality & Tourism</option>
+                    <option value="Accounting & Finance">Accounting & Finance</option>
+                    <option value="Social Sciences">Social Sciences</option>
+                    <option value="Arts & Design">Arts & Design</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm mb-1 font-medium">Message*</label>
+                  <textarea
+                    name="message"
+                    rows={3}
+                    className="w-full px-3 py-2 border text-sm"
+                    required
+                  ></textarea>
+                </div>
+                <div className="flex justify-start">
+                  <button
+                    type="submit"
+                    className="px-6 bg-[#074293] text-white py-2 hover:bg-[#052e68] transition-colors duration-300"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-      <FooterSection />
+
+      {/* Footer Section - Remove from container and place directly in the flex column */}
+      <div className="w-full">
+        <FooterSection />
+      </div>
     </div>
   );
 };
 
 export default Aboutus;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

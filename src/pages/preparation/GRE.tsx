@@ -58,7 +58,7 @@ const GRE: React.FC = () => {
             <div className="space-y-4">
               <h3 className="text-[#074293] text-2xl font-bold mb-2">GRE Course Overview</h3>
               <p className="text-gray-700 text-justify">
-               Lorem ipsum  dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                The Graduate Record Examination (GRE) is a standardized test required for admission to graduate programs worldwide. Our GRE preparation course provides comprehensive training for all sections of the exam, helping students develop strong analytical and reasoning skills. Our experienced instructors use proven methodologies to ensure students achieve their target scores.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-6 mb-6">
@@ -94,8 +94,15 @@ const GRE: React.FC = () => {
 
               <h3 className="text-[#074293] text-2xl font-bold mb-2">Course Curriculum</h3>
               <p className="text-gray-700 text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Our GRE preparation program is structured to cover all test sections thoroughly. The curriculum includes:
               </p>
+              <ul className="list-disc pl-6 mt-4 space-y-2 text-gray-700">
+                <li><strong>Verbal Reasoning:</strong> Reading comprehension, text completion, sentence equivalence</li>
+                <li><strong>Quantitative Reasoning:</strong> Arithmetic, algebra, geometry, data analysis</li>
+                <li><strong>Analytical Writing:</strong> Issue and argument tasks, essay writing strategies</li>
+                <li><strong>Vocabulary Building:</strong> High-frequency GRE words, contextual usage</li>
+                <li><strong>Practice Sessions:</strong> Full-length mock tests, section-wise practice, performance analysis</li>
+              </ul>
             </div>
           </div>
 
@@ -196,6 +203,7 @@ const GRE: React.FC = () => {
 };
 
 export default GRE;
+
 
 
 

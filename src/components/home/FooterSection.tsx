@@ -88,7 +88,7 @@ const FooterSection = () => {
               />
             </div>
             <p className="text-white/80 text-justify mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.
+            Aspire Global Education Consultancy Pvt. Ltd. is a professional educational consultancy dedicated to providing high-quality, affordable, and reliable test preparation and study abroad guidance. 
             </p>
             
             <button 
@@ -231,6 +231,7 @@ const FooterSection = () => {
 };
 
 export default FooterSection;
+
 
 
 

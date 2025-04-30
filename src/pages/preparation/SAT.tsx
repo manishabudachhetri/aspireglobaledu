@@ -12,7 +12,7 @@ const SATPage = () => {
       <div 
         className="relative w-full h-[400px] bg-cover bg-center mt-32"
         style={{ 
-          backgroundImage: 'url("https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=2070&auto=format&fit=crop")'
+          backgroundImage: 'url("https://images.unsplash.com/photo-1462536943532-57a629f6cc60?w=3000&auto=format&fit=crop&q=100&ixlib=rb-4.0.3")'
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-35 flex items-center justify-center">
@@ -51,15 +51,14 @@ const SATPage = () => {
             <div className="space-y-4">
               <h3 className="text-[#074293] text-2xl font-bold mb-2">SAT Course Overview</h3>
               <p className="text-gray-700 text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                The Scholastic Assessment Test (SAT) is a standardized test widely used for college admissions in the United States. Our SAT preparation course is meticulously designed to help students achieve their target scores through comprehensive training and practice. With our experienced instructors and proven teaching methodology, we focus on developing all the necessary skills and strategies required to excel in each section of the SAT exam.
               </p>
-
               <div className="grid sm:grid-cols-2 gap-6 mb-6">
                 <div className="bg-[#e3f2fd] p-5 flex items-center gap-4">
                   <BsHourglassSplit className="text-[#e91e63] text-4xl flex-shrink-0" />
                   <div>
                     <p className="text-[#e91e63] text-lg mb-1">Duration</p>
-                    <p className="text-[#074293] font-semibold text-sm">Approx. 12 Weeks</p>
+                    <p className="text-[#074293] font-semibold text-sm">12 Weeks</p>
                   </div>
                 </div>
                 <div className="bg-[#e3f2fd] p-5 flex items-center gap-4">
@@ -73,7 +72,7 @@ const SATPage = () => {
                   <FontAwesomeIcon icon={faFileLines} className="text-[#e91e63] text-4xl flex-shrink-0" />
                   <div>
                     <p className="text-[#e91e63] text-lg mb-1">Certificates</p>
-                    <p className="text-[#074293] font-semibold text-sm">Course Certificates</p>
+                    <p className="text-[#074293] font-semibold text-sm">Course Completion</p>
                   </div>
                 </div>
                 <div className="bg-[#e3f2fd] p-5 flex items-center gap-4">
@@ -86,14 +85,16 @@ const SATPage = () => {
               </div>
 
               <h3 className="text-[#074293] text-2xl font-bold mb-2">Course Curriculum</h3>
-              <div className="space-y-4">
-                <p className="text-gray-700 text-justify">
-                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                </p>
-               
-                 
-
-              </div>
+              <p className="text-gray-700 text-justify">
+                Our SAT course curriculum covers all key components of the exam. The program includes intensive practice sessions, mock tests, and personalized feedback. Students will learn essential strategies for each section, including:
+              </p>
+              <ul className="list-disc pl-6 mt-4 space-y-2 text-gray-700">
+                <li><strong>Math:</strong> Heart of Algebra, Problem Solving and Data Analysis, Passport to Advanced Math, Additional Topics in Math</li>
+                <li><strong>Evidence-Based Reading:</strong> Command of Evidence, Words in Context, Analysis in History/Social Studies and Science</li>
+                <li><strong>Writing and Language:</strong> Expression of Ideas, Standard English Conventions, Command of Evidence</li>
+                <li><strong>Test-Taking Strategies:</strong> Time management, scoring criteria understanding, common pitfalls to avoid</li>
+                <li><strong>Practice Materials:</strong> Access to extensive online resources, practice tests, and sample questions</li>
+              </ul>
             </div>
           </div>
 
@@ -120,7 +121,7 @@ const SATPage = () => {
             <div className="bg-[#f5f5f5] shadow-md overflow-hidden mt-6">
               <div className="relative">
                 <img 
-                  src="https://plus.unsplash.com/premium_photo-1680807869086-e08309acfb24?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aWVsdHN8ZW58MHx8MHx8fDA%3D" 
+                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500&auto=format&fit=crop" 
                   alt="Enroll Now" 
                   className="w-full h-48 object-cover"
                 />
@@ -136,6 +137,7 @@ const SATPage = () => {
                       type="text"
                       className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white"
                       placeholder="Your name"
+                      required
                     />
                   </div>
                   <div>
@@ -144,6 +146,7 @@ const SATPage = () => {
                       type="tel"
                       className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white"
                       placeholder="Your phone"
+                      required
                     />
                   </div>
                   <div>
@@ -152,11 +155,15 @@ const SATPage = () => {
                       type="email"
                       className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white"
                       placeholder="Your email"
+                      required
                     />
                   </div>
                   <div>
                     <label className="block text-sm mb-1 font-medium">Preparation Class</label>
-                    <select className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white">
+                    <select 
+                      className="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white"
+                      defaultValue="SAT"
+                    >
                       <option>SAT</option>
                       <option>GRE</option>
                       <option>TOEFL</option>
@@ -194,6 +201,8 @@ const SATPage = () => {
 };
 
 export default SATPage;
+
+
 
 
 

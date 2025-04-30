@@ -50,7 +50,7 @@ const IELTSPage = () => {
             <div className="space-y-4">
               <h3 className="text-[#074293] text-2xl font-bold mb-2">IELTS Course Overview</h3>
               <p className="text-gray-700 text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                The International English Language Testing System (IELTS) is the world's most popular English language proficiency test. Our IELTS preparation course is designed to help students excel in all four modules of the test. With experienced trainers and extensive practice materials, we ensure our students achieve their desired band scores.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-6 mb-6">
@@ -86,8 +86,15 @@ const IELTSPage = () => {
 
               <h3 className="text-[#074293] text-2xl font-bold mb-2">Course Curriculum</h3>
               <p className="text-gray-700 text-justify">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Our comprehensive IELTS preparation program covers both Academic and General Training modules:
               </p>
+              <ul className="list-disc pl-6 mt-4 space-y-2 text-gray-700">
+                <li><strong>Listening Skills:</strong> Note-taking strategies, understanding accents, prediction techniques</li>
+                <li><strong>Reading Skills:</strong> Skimming, scanning, paragraph matching, summary completion</li>
+                <li><strong>Writing Skills:</strong> Essay writing, graph description, letter writing, report writing</li>
+                <li><strong>Speaking Skills:</strong> Fluency development, pronunciation, interview preparation</li>
+                <li><strong>Test Practice:</strong> Regular mock tests, band score assessment, performance feedback</li>
+              </ul>
             </div>
           </div>
 
@@ -191,6 +198,7 @@ const IELTSPage = () => {
 };
 
 export default IELTSPage;
+
 
 
 
