@@ -8,7 +8,7 @@ const partners = [
   },
   { 
     name: "British University in Dubai", 
-    logo: new URL('../../assets/images/BritishUni.png', import.meta.url).href 
+    logo: new URL('../../assets/images/BritishUni.png', import.meta.url).href  // Changed to correct case: BritishUni.png
   },
   { 
     name: "British University College", 
@@ -16,7 +16,7 @@ const partners = [
   },
   { 
     name: "Britts Imperial University College", 
-    logo: new URL('../../assets/images/Brittsimperial.png', import.meta.url).href 
+    logo: new URL('../../assets/images/BrittsImperial.png', import.meta.url).href  // Changed to correct case: BrittsImperial.png
   },
   { 
     name: "Kings International Institute", 
@@ -66,6 +66,12 @@ const PartnersSection: FC = () => {
   const partnersPerSlide = 4;
   const totalSlides = Math.ceil(partners.length / partnersPerSlide);
 
+  useEffect(() => {
+    // Debug log to check the URL
+    const brittsImperialPartner = partners.find(p => p.name === "Britts Imperial University College");
+    console.log('Britts Imperial URL:', brittsImperialPartner?.logo);
+  }, []);
+
   // Auto-sliding effect
   useEffect(() => {
     const interval = setInterval(() => {
@@ -103,6 +109,10 @@ const PartnersSection: FC = () => {
                             src={partner.logo} 
                             alt={partner.name}
                             className="max-h-24 w-auto object-contain filter hover:brightness-110 transition-all duration-300"
+                            onError={(e) => {
+                              console.error(`Failed to load image for ${partner.name}:`, e);
+                              console.log('Attempted URL:', partner.logo);
+                            }}
                           />
                         </div>
                     ))}
@@ -134,6 +144,10 @@ const PartnersSection: FC = () => {
 };
 
 export default PartnersSection;
+
+
+
+
 
 
 
