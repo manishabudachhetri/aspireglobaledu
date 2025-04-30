@@ -13,7 +13,7 @@ const TestimonialsSection = () => {
       id: 1,
       name: "Sumnima Limbu",
       image: sumnimaImage,
-      quote: "I am grateful for the dedicated support from the Aspire Global Education team. Their comprehensive guidance, from university selection to visa application, made my journey to studying in Malta smooth and stress-free.",
+      quote: "I am grateful for the dedicated support from the Aspire Global Education team. Their comprehensive guidance, from university selection to visa application, made my journey to studying in Dubai smooth and stress-free.",
     },
     {
       id: 2,
@@ -31,7 +31,7 @@ const TestimonialsSection = () => {
       id: 4,
       name: "Vikash Palli",
       image: vikashImage,
-      quote: "I'm grateful for the dedicated support from the Aspire Global Education team. Their comprehensive guidance, from university selection to visa application, made my journey to studying in Malta smooth and stress-free.",
+      quote: "I'm thankful to Aspire Global Education team for the dedicated support and guidance. Their comprehensive guidance, from university selection to visa application, made my journey to studying in abroad easy.",
     }
   ];
 
