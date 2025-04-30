@@ -6,21 +6,21 @@ const blogPosts = [
     date: "1th Jan",
     image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=600",
     title: "Free Online Courses From Top Universities",
-    description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
+    description: "Discover world-class education at your fingertips with free courses from leading universities. ",
     path: "/blog/free-courses"
   },
   {
     date: "12th Feb",
     image: "https://images.pexels.com/photos/3184394/pexels-photo-3184394.jpeg?auto=compress&cs=tinysrgb&w=600",
-    title: "Guide to Study in Australia 2024",
-    description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
+    title: "Guide to Study in Australia",
+    description: "Everything you need to know about studying in Australia: university options, admission requirements, visa processes, and living costs.",
     path: "/blog/guide-to-australia"
   },
   {
     date: "21th Dec",
     image: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600",
-    title: "IELTS Preparation Tips and Tricks",
-    description: "Lorem Ipsum Dolor Sit Amet Consectetur. A Morbi Facilisi Volputate Pellentesque",
+    title: "IELTS Preparation",
+    description: "Master the IELTS exam with our expert strategies. Get practical tips for all four sections: Reading, Writing, Listening, and Speaking.",
     path: "/blog/ielts-preparation"
   }
 ];
@@ -83,6 +83,8 @@ const Blog = () => {
 };
 
 export default Blog;
+
+
 
 
 
