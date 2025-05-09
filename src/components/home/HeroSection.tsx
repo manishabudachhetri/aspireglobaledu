@@ -58,22 +58,22 @@ const HeroSection = () => {
   ];
 
   useEffect(() => {
-    // Create an interval that changes slides every 4 seconds
+    
     const interval = setInterval(() => {
       setActiveIndex((current) => (current === slides.length - 1 ? 0 : current + 1));
-    }, 4000); // 4000ms = 4 seconds
+    }, 4000); 
 
-    // Cleanup interval on component unmount
+    
     return () => clearInterval(interval);
-  }, []); // Empty dependency array means this effect runs once on mount
+  }, []); 
 
   const handleDotClick = (index: number) => {
     setActiveIndex(index);
   };
 
   return (
-    <section className="relative h-[110vh]" id="home"> {/* Changed from h-[120vh] to h-[110vh] */}
-      {/* Background Image with Transition */}
+    <section className="relative h-[110vh]" id="home"> 
+  
       <div className="absolute inset-0 w-full h-full overflow-hidden flex items-center justify-center">
         {slides.map((slide, index) => (
           <img
@@ -91,7 +91,7 @@ const HeroSection = () => {
               objectFit: 'contain',
               objectPosition: 'center 70%',
               backgroundColor: "#074293",
-              top: '53%', // Changed from 48% to 50% to move down more
+              top: '53%', 
               left: '50%',
               transform: 'translate(-50%, -50%) scale(1.1)',
               padding: '20px',
@@ -110,7 +110,7 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative h-full pt-20 pb-12 px-4 md:px-0">
         <div className="container mx-auto h-full flex items-center">
-          {/* Text Content with Transition */}
+         
           <div className="flex-1 max-w-2xl space-y-6 text-white relative z-10 ml-16">
             {slides.map((slide, index) => (
               <div
@@ -118,7 +118,7 @@ const HeroSection = () => {
                 className={`transition-opacity duration-700 w-full text-left absolute
                   ${index === activeIndex ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
                 style={{
-                  minHeight: '200px' // Ensures consistent height
+                  minHeight: '200px' 
                 }}
               >
                 <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
@@ -131,7 +131,6 @@ const HeroSection = () => {
             ))}
           </div>
           
-          {/* RoundedPill Navigation */}
           <div className="hidden lg:block absolute right-8 z-10">
             <RoundedPill 
               activeDotIndex={activeIndex}

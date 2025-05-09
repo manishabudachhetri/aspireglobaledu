@@ -8,7 +8,7 @@ const Destination: React.FC = () => {
 
   const handlePostClick = (path: string) => {
     navigate(path);
-    // Scroll to top immediately after navigation
+    
     window.scrollTo(0, 0);
   };
 

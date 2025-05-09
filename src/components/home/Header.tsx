@@ -9,7 +9,7 @@ const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const navigate = useNavigate();
 
-  // Handle page navigation
+  
   const handleNavigation = (path: string) => {
     navigate(path);
     window.scrollTo({
@@ -18,7 +18,7 @@ const Header = () => {
     });
   };
 
-  // Handle back/forward browser buttons
+ 
   useEffect(() => {
     const handlePopState = () => {
       window.location.reload();

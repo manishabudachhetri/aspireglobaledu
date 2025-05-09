@@ -74,7 +74,7 @@ const Australia: React.FC = () => {
     setSubmitStatus({});
 
     try {
-      // Add form validation here
+      
       await new Promise(resolve => setTimeout(resolve, 1000));
       setSubmitStatus({ success: 'Thank you for your inquiry. We will contact you soon!' });
       setFormData({

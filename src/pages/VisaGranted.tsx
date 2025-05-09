@@ -41,7 +41,7 @@ const VisaGranted: React.FC = () => {
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= totalPages) {
       setCurrentPage(page);
-      // Scroll to the top of the hero section (approximately 128px from top due to mt-32)
+     
       window.scrollTo({
         top: 128,
         behavior: 'smooth'

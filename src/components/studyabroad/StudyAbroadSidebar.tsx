@@ -40,12 +40,12 @@ const StudyAbroadSidebar: React.FC<StudyAbroadSidebarProps> = ({ isOpen, onClose
   const [isVisible, setIsVisible] = useState(isOpen);
 
   const handleApplyNow = (path: string) => {
-    onClose(); // Close the sidebar
-    navigate(path); // Navigate to the country page
-    window.scrollTo(0, 0); // Scroll to top
+    onClose(); 
+    navigate(path); 
+    window.scrollTo(0, 0); 
   };
 
-  // Update local state when prop changes
+  
   React.useEffect(() => {
     setIsVisible(isOpen);
   }, [isOpen]);
@@ -59,7 +59,7 @@ const StudyAbroadSidebar: React.FC<StudyAbroadSidebarProps> = ({ isOpen, onClose
 
   return (
     <>
-      {/* Overlay */}
+     
       <div 
         className="fixed inset-0 bg-black bg-opacity-50 z-40"
         onClick={handleClose}
@@ -69,7 +69,7 @@ const StudyAbroadSidebar: React.FC<StudyAbroadSidebarProps> = ({ isOpen, onClose
       <div className="fixed inset-0 z-50 flex h-screen font-sans bg-[#eaf0ff] overflow-y-auto overflow-x-hidden shadow-2xl">
         {/* Left Section */}
         <div className="relative w-[30%] bg-[#2c3e94] text-white flex items-center justify-center px-6 py-8 overflow-hidden transition-all duration-300 ease-in-out">
-          {/* Overlay group image */}
+          
           <img
             src="https://images.pexels.com/photos/3769138/pexels-photo-3769138.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt="group"
@@ -82,14 +82,14 @@ const StudyAbroadSidebar: React.FC<StudyAbroadSidebarProps> = ({ isOpen, onClose
             </h1>
           </div>
 
-          {/* Orange & blue diagonal border */}
+          
           <div className="absolute right-0 top-0 h-full w-2 bg-orange-500 z-20 transform transition-all duration-300"></div>
           <div className="absolute right-2 top-0 h-full w-2 bg-[#2c3e94] z-20 transform transition-all duration-300"></div>
         </div>
 
         {/* Right Section */}
         <div className="w-[70%] p-6 md:p-8 lg:p-10 overflow-y-auto bg-[#eaf0ff] shadow-inner">
-          {/* Close button */}
+        
           <div className="flex justify-end mb-6 sticky top-0 z-30 bg-[#eaf0ff]/80 backdrop-blur-sm py-2">
             <button 
               className="flex items-center gap-2 text-black font-semibold group transition-all duration-300 hover:text-[#FF8E3C] cursor-pointer px-4 py-2 rounded-lg hover:bg-gray-50"

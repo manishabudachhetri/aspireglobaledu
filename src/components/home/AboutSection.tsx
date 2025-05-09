@@ -10,7 +10,7 @@ const AboutSection = () => {
       top: 0,
       behavior: 'instant'
     });
-    navigate('/aboutus'); // Changed from '/about' to '/aboutus' to match the route in App.tsx
+    navigate('/aboutus'); 
   };
 
   return (

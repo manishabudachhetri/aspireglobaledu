@@ -33,7 +33,7 @@ const Malta: React.FC = () => {
     contactNumber: '',
     qualification: '',
     passedOutYear: '',
-    preferredCountry: 'Malta', // Default to current country
+    preferredCountry: 'Malta', 
     preferredDegree: '',
     course: '',
     specificCourse: '',

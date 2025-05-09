@@ -55,7 +55,7 @@ export default function Contact() {
           <h2 className="text-[#074293] text-3xl font-bold">Happy Serving You</h2>
         </div>
 
-        {/* Contact Details and Map Container */}
+       
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row w-full gap-8 mb-20">
             {/* Contact Details */}
@@ -125,7 +125,7 @@ export default function Contact() {
 
         {/* Message Form Section */}
         <div className="w-full">
-          {/* Talk to Professional Team Section */}
+         
           <div 
             className="w-full bg-blue-900 py-24 relative"
             style={{

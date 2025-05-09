@@ -89,7 +89,7 @@ const PreparationClass: React.FC = () => {
           <h2 className="text-[#074293] text-3xl font-bold">Test Preparation Classes</h2>
         </div>
 
-        {/* All Classes Grid */}
+       
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testPrepClasses.map((classItem, index) => (
             <div 

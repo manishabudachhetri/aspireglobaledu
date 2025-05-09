@@ -126,7 +126,7 @@ const GuidetoAusPage = () => {
         </div>
       </div>
 
-      {/* Recommended Section - Styled like home/Blog.tsx */}
+      {/* Recommended Section */}
       <section className="py-16 px-4 text-center bg-blue-50">
         <div className="max-w-7xl mx-auto">
           <p className="text-sm text-orange-500 font-semibold mb-1">Related Blog</p>

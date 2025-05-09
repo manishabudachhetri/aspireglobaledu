@@ -54,7 +54,7 @@ const Aboutus = () => {
         
         {/* First Grid Section */}
         <div className="grid md:grid-cols-2 gap-16 items-start">
-          {/* Text Content */}
+         
           <div className="space-y-6 text-black text-justify">
             <p>
               Aspire Global Education Consultancy Pvt. Ltd. is a trusted and professional education consultancy. We assist students in pursuing higher education in Dubai, the UK, Malta, and other global destinations.
@@ -133,7 +133,7 @@ const Aboutus = () => {
             </div>
           </div>
 
-          {/* Add margin between sections */}
+        
           <div className="my-8 md:my-12"></div>
 
           {/* MD Section */}
@@ -181,7 +181,7 @@ const Aboutus = () => {
         {/* Cards Section */}
         <div className="mt-20">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            {/* Card 1 */}
+          
             <div className="space-y-4">
               <div className="bg-white shadow-lg rounded-lg overflow-hidden">
                 <div className="h-[400px] overflow-hidden border-4 border-[#FF8E3C]">
@@ -198,7 +198,6 @@ const Aboutus = () => {
               </div>
             </div>
 
-            {/* Card 2 */}
             <div className="space-y-4">
               <div className="bg-white shadow-lg rounded-lg overflow-hidden">
                 <div className="h-[400px] overflow-hidden border-4 border-[#FF8E3C]">
@@ -217,17 +216,17 @@ const Aboutus = () => {
           </div>
         </div>
 
-        {/* CTA Section with adjusted spacing */}
+        
         <div className="mb-20">
           <CTASection />
         </div>
 
-        {/* Working Process with adjusted spacing */}
+       
         <div className="mb-20">
           <WorkingProcess />
         </div>
 
-        {/* Partners Section */}
+     
         <div className="mb-10">
           <PartnersSection />
         </div>
@@ -340,7 +339,7 @@ const Aboutus = () => {
         </div>
       </div>
 
-      {/* Footer Section - Remove from container and place directly in the flex column */}
+   
       <div className="w-full">
         <FooterSection />
       </div>

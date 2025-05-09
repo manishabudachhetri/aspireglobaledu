@@ -31,7 +31,7 @@ const UK: React.FC = () => {
     contactNumber: '',
     qualification: '',
     passedOutYear: '',
-    preferredCountry: 'UK', // Default to current country
+    preferredCountry: 'UK', 
     preferredDegree: '',
     course: '',
     specificCourse: '',

@@ -81,10 +81,10 @@ const Blogg = () => {
     });
   }, []);
 
-  // Calculate total pages
+ 
   const totalPages = Math.ceil(blogPosts.length / postsPerPage);
 
-  // Get current posts
+  
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = blogPosts.slice(indexOfFirstPost, indexOfLastPost);
@@ -97,7 +97,7 @@ const Blogg = () => {
     navigate(path);
   };
 
-  // Handle page change
+ 
   const handlePageChange = (pageNumber: number) => {
     if (pageNumber >= 1 && pageNumber <= totalPages) {
       setCurrentPage(pageNumber);

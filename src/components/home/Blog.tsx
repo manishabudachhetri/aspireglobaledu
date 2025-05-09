@@ -38,7 +38,7 @@ const Blog = () => {
 
   return (
     <>
-      <section className="pt-32 pb-12 px-4 text-center bg-white"> {/* Reduced pb-24 to pb-12 */}
+      <section className="pt-32 pb-12 px-4 text-center bg-white"> 
         <div className="container mx-auto max-w-7xl">
           <p className="text-sm text-orange-500 font-semibold mb-1">Latest Blog</p>
           <h2 className="text-3xl font-bold text-blue-900 mb-4">Have a Look Our Blog</h2>
@@ -80,7 +80,7 @@ const Blog = () => {
           </div>
         </div>
       </section>
-      <div className="h-4 bg-white"></div> {/* Reduced h-16 to h-4 */}
+      <div className="h-4 bg-white"></div> 
     </>
   );
 };

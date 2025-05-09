@@ -67,12 +67,12 @@ const PartnersSection: FC = () => {
   const totalSlides = Math.ceil(partners.length / partnersPerSlide);
 
   useEffect(() => {
-    // Debug log to check the URL
+    
     const brittsImperialPartner = partners.find(p => p.name === "Britts Imperial University College");
     console.log('Britts Imperial URL:', brittsImperialPartner?.logo);
   }, []);
 
-  // Auto-sliding effect
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % totalSlides);
@@ -82,9 +82,9 @@ const PartnersSection: FC = () => {
   }, [totalSlides]);
 
   return (
-    <section className="py-8 bg-gray-50"> {/* Changed py-16 to py-8 to reduce vertical padding */}
+    <section className="py-8 bg-gray-50"> 
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8"> {/* Changed mb-12 to mb-8 to reduce bottom margin */}
+        <div className="text-center mb-8"> 
           <h2 className="text-xl text-[#FF8E3C]">Institutions</h2>
           <p className="text-[#074293] font-bold text-3xl mt-4">Our Affiliated Universities</p>
         </div>
